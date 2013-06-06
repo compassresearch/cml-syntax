@@ -5,34 +5,20 @@
 | `Chaos`  
 | `Div`  
 | `Wait` [[expression]]
-% communication
 | [[communication]], `->`, [[action]]  
-% boolean guard
-| `[`, [[expression]], `]`, `\&`, [[action]]  
-% sequential composition
+| `[`, [[expression]], `]`, `&`, [[action]]  
 | [[action]], `;`, [[action]]  
-% external choice
 | [[action]], `[]`, [[action]]  
-% internal choice
-| [[action]], `|mytilde|`, [[action]]  
-% interrupt
-| [[action]], `/\mybackslash`, [[action]]  
-| [[action]], `/(`, [[expression]], `)\mybackslash`, [[action]]  
-% untimed timeout
-| [[action]], `[>`, [[action]]  
-% exception
-| [[action]], `[(`, [[expression]], `)>`, [[action]]  
-% hiding
-| [[action]], `\mybackslash\mybackslash`, [[chanset expression]]  
+| [[action]], `|~|`, [[action]]  
+| [[action]], `/_\\`, [[action]]  
+| [[action]], `/_`, [[expression]], `_\\`, [[action]]  
+| [[action]], `[_>`, [[action]]  
+| [[action]], `[_`, [[expression]], `_>`, [[action]]  
+| [[action]], `\\\\`, [[chanset expression]]  
 | [[action]], `startby`, [[expression]] 
 | [[action]], `endby`, [[expression]] 
-% variable renaming --- confirm!!!!
-%\Alt\ [[action]], `[`, [[identifier list]],
-%      `:=`, [[identifier list]], `]`  
-% channel renaming
 | [[action]], [[renaming expression]]  
-| `mu`, \CommaSepList{[[identifier]]}, `@`, `(`, \CommaSepList{[[action]]}, `)` 
-% parallelism
+| `mu`, [[identifier]], { `,` [[identifier]] }, `@`, `(`, [[action]], { `,` [[action]] }, `)` 
 | [[parallel action]] 
 | [[parametrised action]] 
 | `(`, [[action]], `)` 
