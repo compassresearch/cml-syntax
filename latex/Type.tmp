@@ -1,0 +1,68 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\section{Types}
+\label{sec:type-declaration}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\RuleDef{type declarations}{
+  \Literal{types}, \SemicolonSepList{\RuleRef{type definition}}
+}
+
+\RuleDef{type definition}{
+  \Optional{\RuleRef{qualifier}}, \RuleRef{identifier}, \Literal{=}, \RuleRef{type}, \Optional{\RuleRef{type invariant}} \\
+  \Alt\ \Optional{\RuleRef{qualifier}}, \RuleRef{identifier}, \Literal{::}, \RuleRef{field list}, \Optional{\RuleRef{type invariant}}
+}
+
+\RuleDef{type}{
+  \Literal{(}, \RuleRef{type}, \Literal{)} \\
+  \Alt\ \RuleRef{basic type} \\
+  \Alt\ \RuleRef{quote literal} \\
+  \Alt\ \Literal{compose}, \RuleRef{identifier}, \Literal{of}, \RuleRef{field list}, \Literal{end} \\
+  \Alt\ \RuleRef{type}, \Literal{|}, \xSepList{|}{\RuleRef{type}} \\
+  \Alt\ \RuleRef{type}, \Literal{*}, \xSepList{*}{\RuleRef{type}} \\
+  \Alt\ \Literal{[}, \RuleRef{type}, \Literal{]} \\
+  \Alt\ \Literal{set of}, \RuleRef{type} \\
+  \Alt\ \Literal{seq of}, \RuleRef{type} \\
+  \Alt\ \Literal{seq1 of}, \RuleRef{type} \\
+  \Alt\ \Literal{map}, \RuleRef{type}, \Literal{to}, \RuleRef{type} \\
+  \Alt\ \Literal{inmap}, \RuleRef{type}, \Literal{to}, \RuleRef{type} \\
+  \Alt\ \RuleRef{function type} \\
+  \Alt\ \RuleRef{name} 
+}
+
+\RuleDef{basic type}{
+  \Literal{bool} 
+  \Alt\ \Literal{nat} 
+  \Alt\ \Literal{nat1} 
+  \Alt\ \Literal{int} 
+  \Alt\ \Literal{rat} 
+  \Alt\ \Literal{real} 
+  \Alt\ \Literal{char} 
+  \Alt\ \Literal{token}
+}
+
+\RuleDef{field list}{
+  \SequenceOne{\RuleRef{field}}
+}
+
+\RuleDef{field}{
+  \RuleRef{type} \\
+  \Alt\ \RuleRef{identifier}, \Literal{:}, \RuleRef{type} \\
+  \Alt\ \RuleRef{identifier}, \Literal{:-}, \RuleRef{type}
+}
+
+\RuleDef{function type}{
+  \RuleRef{discretionary type}, \Literal{+>}, \RuleRef{type} \\
+  \Alt\ \RuleRef{discretionary type}, \Literal{->}, \RuleRef{type}
+}
+
+\RuleDef{discretionary type}{
+  \RuleRef{type} \\
+  \Alt\ \Literal{()}
+}
+
+\RuleDef{type invariant}{
+  \Literal{inv}, \RuleRef{pattern}, \Literal{==}, \RuleRef{expression}
+}
+
+

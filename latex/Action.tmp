@@ -1,0 +1,107 @@
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\section{Actions}
+\label{sec:action}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\RuleDef{action}{
+  % successful termination
+  \Literal{Skip} \\ 
+  \Alt\ \Literal{Stop} \\ 
+  \Alt\ \Literal{Chaos} \\ 
+  \Alt\ \Literal{Div} \\ 
+  \Alt\ \Literal{Wait}, \RuleRef{expression} \\ 
+  % communication
+  \Alt\ \RuleRef{communication}, \Literal{->}, \RuleRef{action} \\ 
+  % boolean guard
+  \Alt\ \Literal{[}, \RuleRef{expression}, \Literal{]}, \Literal{\&}, \RuleRef{action} \\ 
+  % sequential composition
+  \Alt\ \RuleRef{action}, \Literal{;}, \RuleRef{action} \\ 
+  % external choice
+  \Alt\ \RuleRef{action}, \Literal{[]}, \RuleRef{action} \\ 
+  % internal choice
+  \Alt\ \RuleRef{action}, \Literal{|\mytilde|}, \RuleRef{action} \\ 
+  % interrupt
+  \Alt\ \RuleRef{action}, \Literal{/\mybackslash}, \RuleRef{action} \\ 
+  \Alt\ \RuleRef{action}, \Literal{/(}, \RuleRef{expression}, \Literal{)\mybackslash}, \RuleRef{action} \\ 
+  % untimed timeout
+  \Alt\ \RuleRef{action}, \Literal{[>}, \RuleRef{action} \\ 
+  % exception
+  \Alt\ \RuleRef{action}, \Literal{[(}, \RuleRef{expression}, \Literal{)>}, \RuleRef{action} \\ 
+  % hiding
+  \Alt\ \RuleRef{action}, \Literal{\mybackslash\mybackslash}, \RuleRef{chanset expression} \\ 
+  \Alt\ \RuleRef{action}, \Literal{startby}, \RuleRef{expression} \\
+  \Alt\ \RuleRef{action}, \Literal{endby}, \RuleRef{expression} \\
+  % variable renaming --- confirm!!!!
+  %\Alt\ \RuleRef{action}, \Literal{[}, \RuleRef{identifier list},
+  %      \Literal{:=}, \RuleRef{identifier list}, \Literal{]} \\ 
+  % channel renaming
+  \Alt\ \RuleRef{action}, \RuleRef{renaming expression} \\ 
+  \Alt\ \Literal{mu}, \CommaSepList{\RuleRef{identifier}}, \Literal{@}, \Literal{(}, \CommaSepList{\RuleRef{action}}, \Literal{)} \\
+  % parallelism
+  \Alt\ \RuleRef{parallel action} \\
+  \Alt\ \RuleRef{parametrised action} \\
+  \Alt\ \Literal{(}, \RuleRef{action}, \Literal{)} \\
+  \Alt\ \RuleRef{instantiated action} \\
+  \Alt\ \RuleRef{replicated action} \\
+  \Alt\ \RuleRef{statement} 
+  %% \Alt\ \RuleRef{let statement} \\
+  %% \Alt\ \RuleRef{block statement} \\
+  %% \Alt\ \RuleRef{control statements} \\ 
+}
+
+\RuleDef{communication}{
+    \RuleRef{identifier}, \Sequence{\RuleRef{communication parameter}} 
+}
+
+\RuleDef{communication parameter}{
+    \Literal{?}, \RuleRef{bindable pattern}, \Optional{ \Literal{in set}, \RuleRef{expression} } \\ 
+    \Alt\ \Literal{!}, \RuleRef{parameter} \\
+    \Alt\ \Literal{.}, \RuleRef{parameter}
+}
+
+\RuleDef{parameter}{
+    \RuleRef{identifier} \\
+    \Alt\ \Literal{(} \RuleRef{expression} \Literal{)} \\
+    \Alt\ \RuleRef{symbolic literal} \\
+    \Alt\ \RuleRef{tuple expression} \\
+    \Alt\ \RuleRef{record expression}
+}
+
+\RuleDef{parallel action}{
+  % synchronous parallelism
+  \Alt\ \RuleRef{action} \Literal{||} \RuleRef{action}, \\
+  \Alt\ \RuleRef{action} \Literal{[|}, \RuleRef{nameset expression}, \Literal{|}, \RuleRef{nameset expression}, \Literal{|]}, \RuleRef{action} \\ 
+  % interleaving
+  \Alt\ \RuleRef{action}, \Literal{|||}, \RuleRef{action} \\ 
+  \Alt\ \RuleRef{action}, \Literal{[||}, \RuleRef{chanset expression}, \Literal{|},  \RuleRef{chanset expression}, \Literal{||]}, \RuleRef{action} \\ 
+  % alphabetised parallelism
+  \Alt\ \RuleRef{action} \Literal{[}, \RuleRef{chanset expression}, \Literal{||}, \RuleRef{chanset expression}, \Literal{]}, \RuleRef{action} \\
+  \Alt\ \RuleRef{action} \Literal{[}, \RuleRef{nameset expression}, \Literal{|}, \RuleRef{chanset expression}, \Literal{||}, \ \\ \quad\quad \RuleRef{chanset expression}, \Literal{|}, \RuleRef{nameset expression}, \Literal{]}, \RuleRef{action} \\
+  % generalised parallelism
+  \Alt\ \RuleRef{action} \Literal{[|}, \RuleRef{chanset expression}, \Literal{|]}, \RuleRef{action} \\
+  \Alt\ \RuleRef{action} \Literal{[|}, \RuleRef{nameset expression}, \Literal{|}, \RuleRef{chanset expression}, \Literal{|},\\
+    \qquad \RuleRef{nameset expression}, \Literal{|]}, \RuleRef{action} \\ 
+}
+
+\RuleDef{parametrised action}{
+  \Literal{(} \xSepList{,}{\RuleRef{parametrisation}}, \Literal{@}, \RuleRef{action} \Literal{)}
+}
+
+\RuleDef{instantiated action}{
+  \RuleRef{parametrised action}, \Literal{(}, \xSepList{,}{\RuleRef{expression}}, \Literal{)}
+}
+
+\RuleDef{replicated action}{
+  \Literal{;}, \RuleRef{replication declarations}, \Literal{@}, \RuleRef{action} \\ 
+  \Alt\ \Literal{[]}, \RuleRef{replication declarations}, \Literal{@}, \RuleRef{action} \\ 
+  \Alt\ \Literal{|\mytilde|}, \RuleRef{replication declarations}, \Literal{@}, \RuleRef{action} \\  
+  \Alt\ \Literal{[||}, \RuleRef{nameset expression}, \Literal{||]}, \RuleRef{replication declarations}, \Literal{@}, \RuleRef{action} \\ 
+  \Alt\ \Literal{|||}, \RuleRef{replication declarations}, \Literal{@}, \Literal{[}, \RuleRef{nameset expression}, \Literal{]}, \RuleRef{action} \\ 
+  \Alt\ \Literal{[|}, \RuleRef{chanset expression} \Literal{|]}, \RuleRef{replication declarations}, \Literal{@}, \\
+    \qquad \Literal{[} , \RuleRef{nameset expression}, \Literal{]}, \RuleRef{action} \\ 
+  \Alt\ \Literal{||}, \RuleRef{replication declarations}, \Literal{@}, \\
+    \qquad \Literal{[}, \RuleRef{nameset expression}, \Literal{|}, \RuleRef{chanset expression}, \Literal{]}, \RuleRef{action} \\ 
+  \Alt\ \Literal{||}, \RuleRef{replication declarations}, \Literal{@}, \Literal{[}, \RuleRef{nameset expression}, \Literal{]}, \RuleRef{action} \\ 
+}

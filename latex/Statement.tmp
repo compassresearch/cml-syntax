@@ -1,0 +1,106 @@
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\section{Statements}
+\label{sec:statements}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\RuleDef{statement}{
+  \Literal{let}, \xSepList{,}{\RuleRef{local definition}},  \Literal{in}, \RuleRef{action} \\
+  \Alt\ \Literal{(}, \Optional{\RuleRef{block declarations}},  \RuleRef{action}, \Literal{)} \\
+  \Alt\ \RuleRef{cases statement} \\
+  \Alt\ \RuleRef{if statement} \\
+  \Alt\ \Literal{if} \xSepList{|}{\RuleRef{non-deterministic alt}}, \Literal{end} \\
+  \Alt\ \Literal{do} \xSepList{|}{\RuleRef{non-deterministic alt}}, \Literal{end} \\
+  \Alt\ \Literal{while}, \RuleRef{expression}, \Literal{do}, \RuleRef{action} \\
+  \Alt\ \Literal{for}, \RuleRef{bindable pattern}, \Optional{\Literal{:}, \RuleRef{type}} \Literal{in}, \RuleRef{expression}, \Literal{do}, \RuleRef{action} \\
+  \Alt\ \Literal{for}, \Literal{all}, \RuleRef{bindable pattern}, \Literal{in set}, \RuleRef{expression}, \Literal{do}, \RuleRef{action} \\
+  \Alt\ \Literal{for}, \RuleRef{identifier}, \Literal{=}, \RuleRef{expression}, \Literal{to}, \RuleRef{expression}, \Optional{\Literal{by}, \RuleRef{expression}}, \\
+        \qquad \Literal{do}, \RuleRef{action} \\
+  \Alt\ \Literal{[}, \Optional{\RuleRef{frame}}, \Optional{\Literal{pre}, \RuleRef{expression}}, \Literal{post}, \RuleRef{expression}, \Literal{]} \\
+  \Alt\ \Literal{return}, \Optional{\RuleRef{expression}} \\
+  \Alt\ \RuleRef{assign statement} \\
+  \Alt\ \RuleRef{multiple assign statement} \\
+  \Alt\ \RuleRef{call statement} \\
+  \Alt\ \RuleRef{new statement}
+}
+
+\RuleDef{local definition}{
+  \RuleRef{value definition} \\
+  \Alt\ \RuleRef{function definition}
+}
+
+\RuleDef{block declarations}{
+  \Literal{dcl}, \xSepList{,}{assignment definition}, \Literal{@}
+}
+
+\RuleDef{non-deterministic alt}{
+  \RuleRef{expression}, \Literal{->}, \RuleRef{action}
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Conditional Statements}%\label{condstmt2}
+\label{sec:cond-stat}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+  Note that the syntax described here suffers from the
+  ``dangling-else'' ambiguity that affect many C-like languages.  We
+  resolve this in the parser in a manner similar to those C-like
+  langauges, so that the else and elseif clauses attach to the nearest
+  if.  For example, ``if a then if b then skip else skip'' would be
+  correctly parenthesised as ``if a then (if b then skip else skip)''.
+
+\RuleDef{if statement}{
+  \Literal{if}, \RuleRef{expression}, \Literal{then}, \RuleRef{action}, \Sequence{\RuleRef{elseif statement}}, \Optional{\Literal{else}, \RuleRef{action}}
+}
+
+\RuleDef{elseif statement}{
+  \Literal{elseif}, \RuleRef{expression}, \Literal{then}, \RuleRef{action}
+}
+
+
+\RuleDef{cases statement}{
+  \Literal{cases}, \RuleRef{expression}, \Literal{:}, \\
+  \quad \xSepList{,}{\RuleRef{cases statement alt}} \\
+  \quad \Optional{\Literal{,}, \RuleRef{others statement}}, \\
+  \Literal{end}
+}
+
+\RuleDef{cases statement alt}{
+  \RuleRef{pattern list}, \Literal{->}, \RuleRef{action}
+}
+
+\RuleDef{others statement}{
+  \Literal{others}, \Literal{->}, \RuleRef{action}
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Assignment-like Statements}
+\label{sec:call-return-stat}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\RuleDef{assign statement}{
+  \RuleRef{assignable expression}, \Literal{:=}, \RuleRef{expression}
+}
+
+\RuleDef{multiple assign statement}{
+  \Literal{atomic}, \Literal{(}, \\
+  \quad \RuleRef{assign statement}, \Literal{;}, \xSepList{;}{\RuleRef{assign statement}}, \\
+  \Literal{)}
+}
+
+  Note that the second alternative of the \RuleRef{call statement} and
+  the basic \RuleRef{assign statement} partially overlap and
+  introduce an ambiguity that is resolved by the typechecker.
+
+\RuleDef{call statement}{
+  \RuleRef{name}, \Literal{(}, \Optional{\xSepList{,}{\RuleRef{expression}}}, \Literal{)} \\
+  \Alt\ \RuleRef{assignable expression}, \Literal{:=}, \RuleRef{name}, \Literal{(}, \Optional{\xSepList{,}{\RuleRef{expression}}}, \Literal{)}
+}
+
+\RuleDef{new statement}{
+  \RuleRef{assignable expression}, \Literal{:=}, \Literal{new}, \RuleRef{name}, \Literal{(}, \Optional{\xSepList{,}{\RuleRef{expression}}}, \Literal{)}
+}
+

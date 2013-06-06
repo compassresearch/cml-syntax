@@ -1,0 +1,136 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\section{Lexical Specification}
+\label{sec:lexic-spec}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% This section reproduces the lexical specification of VDM++ as
+% described in \cite{VDM-10-language-reference-manual}.  Unicode
+% character categories are summarised in~\cite{UnicodeCharCats}.
+
+% \begin{table}[!htb]
+% \begin{tabular}{l}
+% \hline
+
+Unlike the rest of this specification, the rules in this section are
+sensitive to whitespace; as such, whitespace may not implicity
+separate any pair of components in a rule here.
+
+Note that the unicode character categories can be found online at
+\url{http://www.fileformat.info/info/unicode/category/index.htm}.  The
+present release of the tool only supports characters below U+0100;
+support for characters outside of the extended ASCII subset of unicode
+is planned for a future release.
+
+\LexicalRuleDef{initial letter}= \\
+\begin{tabular}{lp{.88\textwidth}}
+if
+    & codepoint < U+0100 \\
+then
+    & Any character in categories Ll, Lm, Lo, Lt, Lu, or the character U+0024 (\Literal{\$}) \\
+else
+    & Any character, excluding categories Cc, Zl, Zp, Zs, Cs, Cn, Nd, Pc
+\end{tabular}
+
+
+\LexicalRuleDef{following letter}= \\
+\begin{tabular}{lp{.88\textwidth}}
+if
+    & codepoint < U+0100 \\
+then
+    & Any character in categories Ll, Lm, Lo, Lt, Lu, Nd, or the characters U+0024 (\Literal{\$}), U+0027 (\Literal{'}), and U+005F (\Literal{\_}) \\
+else
+    & Any character, excluding categories Cc, Zl, Zp, Zs, Cs, Cn
+\end{tabular}
+
+\LexicalRuleDef{ascii letter}=\\[.4ex]
+\hspace*{3.7em}\parbox{.88\textwidth}{Any character in the ranges [U+0041,U+005A] and [U+0061,U+007A] (A-Z and a-z, respectively)}
+
+\LexicalRuleDef{character}=\\[.4ex]
+\hspace*{3.7em}\parbox{.88\textwidth}{Is left underdefined, except to note that it may be any unicode character except those that conflict with the lexical rule that uses the character class.  For example, character does not include \Literal{\mybackslash} in the \RuleRef{character literal} rule.}
+
+\RuleDef{identifier}{
+\RuleRef{initial letter}, \Sequence{\RuleRef{following letter}}
+}
+
+\RuleDef{digit}{
+  \Literal{0} \Alt\ \Literal{1} \Alt\ \Literal{2} \Alt\ \Literal{3} \Alt\ \Literal{4} \Alt\ \Literal{5} \Alt\ \Literal{6} \Alt\ \Literal{7} \Alt\ \Literal{8} \Alt\ \Literal{9}
+}
+
+\RuleDef{hex digit}{
+  \RuleRef{digit} | \Literal{a} \Alt\ \Literal{b} \Alt\ \Literal{c} \Alt\ \Literal{d} \Alt\ \Literal{e} \Alt\ \Literal{f} \Alt\ \Literal{A} \Alt\ \Literal{B} \Alt\ \Literal{C} \Alt\ \Literal{D} \Alt\ \Literal{E} \Alt\ \Literal{F}
+}
+
+\RuleDef{numeral}{
+  \RuleRef{digit}, \Sequence{\RuleRef{digit}}
+}
+
+%% \RuleDef{is basic type}{
+%% \Literal{is\_},(\Literal{bool} \Alt\ \Literal{nat} 
+%% \Alt\ \Literal{nat1} \Alt\ \Literal{int} \Alt\ \Literal{rat} 
+%% \Alt\ \Literal{real} \Alt\ \Literal{char} \Alt\ \Literal{token})
+%% }
+
+\RuleDef{symbolic literal}{
+  \RuleRef{numeric literal} \\
+  \Alt\ \RuleRef{boolean literal} \\
+  \Alt\ \RuleRef{nil literal} \\
+  \Alt\ \RuleRef{character literal} \\
+  \Alt\ \RuleRef{text literal} \\
+  \Alt\ \RuleRef{quote literal}
+}
+
+\RuleDef{numeric literal}{
+  \RuleRef{decimal literal} \\
+  \Alt\ \RuleRef{hex literal}
+}
+
+\RuleDef{exponent}{
+  (\Literal{E} \Alt\ \Literal{e}), \Optional{\Literal{+} \Alt\ \Literal{-}}, \RuleRef{numeral}
+}
+
+\RuleDef{decimal literal}{
+  \RuleRef{numeral}, \Optional{\Literal{.}, \RuleRef{digit}, \Sequence{\RuleRef{digit}}}, \Optional{\RuleRef{exponent}}
+}
+
+\RuleDef{hex literal}{
+  (\Literal{0x} \Alt\ \Literal{0X}), \RuleRef{hex digit}, \Sequence{\RuleRef{hex digit}}
+}
+
+\RuleDef{boolean literal}{
+  \Literal{true} \Alt\ \Literal{false}
+}
+
+\RuleDef{nil literal}{
+  \Literal{nil}
+}
+
+\RuleDef{character literal}{
+  \Literal{'}, \RuleRef{character}, \Literal{'} \\
+  \Alt\ \Literal{'}, \RuleRef{escape sequence}, \Literal{'}
+}
+
+\RuleDef{escape sequence}{
+  \Literal{\mybackslash\mybackslash} 
+  \Alt\ \Literal{\mybackslash r} 
+  \Alt\ \Literal{\mybackslash n} 
+  \Alt\ \Literal{\mybackslash t} 
+  \Alt\ \Literal{\mybackslash f} 
+  \Alt\ \Literal{\mybackslash e} 
+  \Alt\ \Literal{\mybackslash a}
+  \Alt\ \Literal{\mybackslash "}
+  \Alt\ \Literal{\mybackslash '} \\
+  \Alt\ \Literal{\mybackslash x}, \RuleRef{hex digit}, \RuleRef{hex digit} \\ 
+  \Alt\ \Literal{\mybackslash u}, \RuleRef{hex digit}, \RuleRef{hex digit}, \RuleRef{hex digit}, \RuleRef{hex digit} \\ 
+  \Alt\ \Literal{\mybackslash c}, \RuleRef{ascii letter} 
+  %\Alt\ \Literal{\mybackslash }, \RuleRef{octal digit}, \RuleRef{octal digit}, \RuleRef{octal digit} \\
+}
+
+\RuleDef{text literal}{
+  \Literal{"}, \Sequence{\RuleRef{character} \Alt\ \RuleRef{escape sequence}}, \Literal{"}
+}
+
+\RuleDef{quote literal}{
+  \Literal{<}, \RuleRef{identifier}, \Literal{>}
+}
+

@@ -1,0 +1,204 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\section{Expressions}
+\label{sec:expressions}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\RuleDef{expression}{
+  \Literal{self} \\
+  \Alt\ \RuleRef{name} \\
+  \Alt\ \RuleRef{old name}  \\
+  \Alt\ \RuleRef{symbolic literal} \\
+  \Alt\ \Literal{(}, \RuleRef{expression}, \Literal{)} \\
+  \Alt\ \RuleRef{unary operator}, \RuleRef{expression} \\
+  \Alt\ \RuleRef{expression}, \RuleRef{binary operator}, \RuleRef{expression} \\
+  \Alt\ \Literal{let}, \xSepList{,}{\RuleRef{local definition}}, \Literal{in}, \RuleRef{expression} \\
+  \Alt\ \Literal{forall}, \RuleRef{bind list}, \Literal{@}, \RuleRef{expression} \\
+  \Alt\ \Literal{exists}, \RuleRef{bind list}, \Literal{@}, \RuleRef{expression} \\
+  \Alt\ \Literal{exists1}, \RuleRef{bind}, \Literal{@}, \RuleRef{expression} \\
+  \Alt\ \Literal{iota}, \RuleRef{bind}, \Literal{@}, \RuleRef{expression} \\
+  \Alt\ \Literal{lambda}, \RuleRef{type bind list}, \Literal{@}, \RuleRef{expression} \\
+  \Alt\ \Literal{is\myunderscore}, \Literal{(}, \RuleRef{expression}, \Literal{,}, \RuleRef{type}, \Literal{)} \\
+  \Alt\ \Literal{is\myunderscore}, \RuleRef{basic type}, \Literal{(}, \RuleRef{expression}, \Literal{)} \\
+  \Alt\ \Literal{is\myunderscore}, \RuleRef{name}, \Literal{(}, \RuleRef{expression}, \Literal{)} \\
+  \Alt\ \Literal{pre\myunderscore}, \Literal{(}, \xSepList{,}{\RuleRef{expression}}, \Literal{)} \\
+  \Alt\ \Literal{isofclass}, \Literal{(}, \RuleRef{name}, \RuleRef{expression}, \Literal{)} \\
+%
+  \Alt\ \RuleRef{tuple expression} \\
+  \Alt\ \RuleRef{record expression} \\
+  \Alt\ \RuleRef{set expression} \\
+  \Alt\ \RuleRef{sequence expression} \\
+  \Alt\ \RuleRef{subsequence} \\
+  \Alt\ \RuleRef{map expression} \\
+  \Alt\ \RuleRef{if expression} \\
+  \Alt\ \RuleRef{cases expression} \\
+  \Alt\ \RuleRef{apply} \\
+  \Alt\ \RuleRef{field select} \\
+  \Alt\ \RuleRef{tuple select} \\
+}
+
+\RuleDef{name}{
+  \RuleRef{identifier}, \Optional{\Literal{.}, \RuleRef{identifier}}
+}
+
+\RuleDef{old name}{
+  \RuleRef{identifier}, \Literal{\mytilde}
+}
+
+%\draftnote{There's actually a fairly significant deviation between the parser and the syntax here, but I'm just going to say nothing for the moment. -jwc/04Jan2013}
+
+\RuleDef{unary operator}{
+  \Literal{+}       \Alt\
+  \Literal{-}       \Alt\ 
+  \Literal{abs}     \Alt\ 
+  \Literal{floor}   \Alt\ 
+  \Literal{not}     \Alt\ 
+  \Literal{card}    \Alt\ 
+  \Literal{power}   \Alt\ 
+  \Literal{dunion}  \Alt\ 
+  \Literal{dinter}  \Alt\\ 
+  \Literal{hd}      \Alt\ 
+  \Literal{tl}      \Alt\ 
+  \Literal{len}     \Alt\
+  \Literal{elems}   \Alt\ 
+  \Literal{inds}    \Alt\ 
+  \Literal{reverse} \Alt\ 
+  \Literal{conc}    \Alt\ 
+  \Literal{dom}     \Alt\ 
+  \Literal{rng}     \Alt\\ 
+  \Literal{merge}   \Alt\ 
+  \Literal{inverse}
+}
+
+\RuleDef{binary operator}{
+  \Literal{+} \Alt\
+  \Literal{-} \Alt\
+  \Literal{*} \Alt\
+  \Literal{/} \Alt\
+  \Literal{div} \Alt\
+  \Literal{rem} \Alt\
+  \Literal{mod} \Alt\
+  \Literal{<} \Alt\
+  \Literal{<=} \Alt\
+  \Literal{>} \Alt\
+  \Literal{>=} \Alt\
+  \Literal{=} \Alt\\
+  \Literal{<>} \Alt\
+  \Literal{or} \Alt\
+  \Literal{and} \Alt\
+  \Literal{=>} \Alt\
+  \Literal{<=>} \Alt\
+  \Literal{in set} \Alt\
+  \Literal{not in set} \Alt\
+  \Literal{subset} \Alt\\
+  \Literal{psubset} \Alt\
+  \Literal{union} \Alt\
+  \Literal{\mybackslash} \Alt\
+  \Literal{inter} \Alt\
+  \Literal{\mycaret} \Alt\
+  \Literal{++} \Alt\
+  \Literal{munion} \Alt\\
+  \Literal{<:} \Alt\
+  \Literal{<-:} \Alt\
+  \Literal{:>} \Alt\
+  \Literal{:->} \Alt\
+  \Literal{comp} \Alt\
+  \Literal{**}
+}
+
+\RuleDef{tuple expression}{
+  \Literal{mk\myunderscore}, \Literal{(}, \RuleRef{expression}, \Literal{,}, \xSepList{,}{\RuleRef{expression}}, \Literal{)}
+}
+
+\RuleDef{record expression}{
+  \Literal{mk\myunderscore}, \Literal{token}, \Literal{(}, \RuleRef{expression}, \Literal{)} \\
+  \Alt\ \Literal{mk\myunderscore}, \RuleRef{name}, \Literal{(}, \Optional{\xSepList{,}{\RuleRef{expression}}}, \Literal{)}
+}
+
+\RuleDef{set expression}{
+  \Literal{\mylcurly}, \Optional{\xSepList{,}{\RuleRef{expression}}}, \Literal{\myrcurly} \\
+  \Alt\
+  \Literal{\mylcurly}, \RuleRef{expression}, \Literal{|}, \RuleRef{bind list}, \Optional{\Literal{@}, \RuleRef{expression}}, \Literal{\myrcurly} \\
+  \Alt\
+  \Literal{\mylcurly}, \RuleRef{expression}, \Literal{,}, \Literal{...}, \Literal{,}, \RuleRef{expression}, \Literal{\myrcurly}
+}
+
+%\draftnote{Do we want sequence ranges, i.e. \texttt{[1,...,5]} for the sequence \texttt{[1,2,3,4,5]} ?}
+
+\RuleDef{sequence expression}{
+  \Literal{[}, \Optional{\xSepList{,}{\RuleRef{expression}}}, \Literal{]} \\
+  \Alt\
+  \Literal{[}, \RuleRef{expression}, \Literal{|}, \RuleRef{set bind}, \Optional{\Literal{@}, \RuleRef{expression}}, \Literal{]}
+}
+
+\RuleDef{subsequence}{
+  \RuleRef{expression}, \Literal{(}, \RuleRef{expression}, \Literal{,}, \Literal{...}, \Literal{,}, \RuleRef{expression}, \Literal{)}
+}
+
+\RuleDef{map expression}{
+  \Literal{\mylcurly}, \Literal{|->}, \Literal{\myrcurly} \\
+  \Alt\
+  \Literal{\mylcurly}, \xSepList{,}{\RuleRef{maplet}}, \Literal{\myrcurly} \\
+  \Alt\
+  \Literal{\mylcurly}, \RuleRef{maplet}, \Literal{|}, \RuleRef{bind list}, \Optional{\Literal{@}, \RuleRef{expression}}, \Literal{\myrcurly}
+}
+
+\RuleDef{maplet}{
+  \RuleRef{expression}, \Literal{|->}, \RuleRef{expression}
+}
+
+\RuleDef{apply}{
+  \RuleRef{expression}, \Literal{(}, \Optional{\xSepList{,}{\RuleRef{expression}}}, \Literal{)}
+}
+
+\RuleDef{field select}{
+  \RuleRef{expression}, \Literal{.}, \RuleRef{identifier}
+}
+
+\RuleDef{tuple select}{
+  \RuleRef{expression}, \Literal{.\#}, \RuleRef{numeral}
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Conditional Expressions}
+\label{sec:cond-expr}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\RuleDef{if expression}{
+  \Literal{if}, \RuleRef{expression}, \Literal{then}, \RuleRef{expression}, 
+  \Sequence{\RuleRef{elseif expression}}, \\
+  \Literal{else}, \RuleRef{expression}
+}
+
+\RuleDef{elseif expression}{
+  \Literal{elseif}, \RuleRef{expression}, \Literal{then}, \RuleRef{expression}
+}
+
+\RuleDef{cases expression}{
+  \Literal{cases}, \RuleRef{expression}, \Literal{:}, \\
+  \quad \RuleRef{cases expression alternatives}, \\
+  \quad \Optional{\Literal{,}, \Literal{others} \Literal{->} \RuleRef{expression} }, \\
+  \Literal{end}
+}
+
+\RuleDef{cases expression alternatives}{
+  \CommaSepList{\RuleRef{pattern list}, \Literal{->}, \RuleRef{expression}}
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Assignable Expressions}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\RuleDef{assignable expression}{
+  \Literal{self} \Sequence{\RuleRef{selector}} \\
+  \Alt\ \RuleRef{identifier} \Sequence{\RuleRef{selector}}
+}
+
+\RuleDef{selector}{
+  \Literal{(}, \Optional{\xSepList{,}{\RuleRef{expression}}}, \Literal{)} \\
+  \Alt\ \Literal{(}, \RuleRef{expression}, \Literal{...}, \RuleRef{expression}, \Literal{)} \\
+  \Alt\ \Literal{.\#}, \RuleRef{numeral} \\
+  \Alt\ \Literal{.}, \RuleRef{identifier}
+}
