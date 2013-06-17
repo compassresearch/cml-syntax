@@ -4,15 +4,15 @@
 | [[process]], `;`, [[process]] <br /> 
 | [[process]], `[]`, [[process]] <br /> 
 | [[process]], `|~|`, [[process]] <br /> 
-| [[process]], `[|`, [[chanset expression]], `|]`, [[process]] <br /> 
-| [[process]], `[`, [[chanset expression]], `||`, [[chanset expression]], `]`, [[process]] <br /> 
+| [[process]], `[|`, [[chanset expression|varset]], `|]`, [[process]] <br /> 
+| [[process]], `[`, [[chanset expression|varset]], `||`, [[chanset expression|varset]], `]`, [[process]] <br /> 
 | [[process]], `||`, [[process]] <br /> 
 | [[process]], `|||`, [[process]] <br /> 
 | [[process]], `/_\`, [[process]] <br /> 
 | [[process]], `/_`, [[expression]], `_\`, [[process]] <br /> 
 | [[process]], `[_>`, [[process]] <br /> 
 | [[process]], `[_`, [[expression]], `_>`, [[process]] <br /> 
-| [[process]], `\\`, [[chanset expression]] <br /> 
+| [[process]], `\\`, [[chanset expression|varset]] <br /> 
 | [[process]], `startsby`, [[expression]] <br /> 
 | [[process]], `endsby`, [[expression]] <br /> 
 | `(`, [[parametrisation]], `@`, [[process]], `)`, `(`, [[expression]], { `,`, [[expression]] }, `)` <br /> 
@@ -26,8 +26,8 @@
   `;`, [[replication declarations]], `@`, [[process]] <br /> 
 | `[]`, [[replication declarations]], `@`, [[process]] <br /> 
 | `|~|`, [[replication declarations]], `@`, [[process]] <br /> 
-| `[|`, [[chanset expression]], `|]`, [[replication declarations]], `@`, [[process]] <br /> 
-| `||`, [[replication declarations]], `@`, `[`, [[chanset expression]], `]`, [[process]] <br />
+| `[|`, [[chanset expression|varset]], `|]`, [[replication declarations]], `@`, [[process]] <br /> 
+| `||`, [[replication declarations]], `@`, `[`, [[chanset expression|varset]], `]`, [[process]] <br />
 | `||`, [[replication declarations]], `@`, [[process]] <br />
 | `|||`, [[replication declarations]], `@`, [[process]] <br />
 ;
@@ -48,7 +48,7 @@
 ;
  
 [[renaming pair|process]] → <br />
-  [[identifier]], [ `.`, [[expression]] ], `<-`, [[identifier]], [ `.`, [[expression]] ] <br />
+  [[identifier]], { `.`, [[expression]] }, `<-`, [[identifier]], { `.`, [[expression]] } <br />
 ;
 
 [[replication declarations|process]] → <br />

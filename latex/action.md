@@ -14,7 +14,7 @@
 | [[action]], `/_`, [[expression]], `_\`, [[action]]   <br/>
 | [[action]], `[_>`, [[action]]   <br/>
 | [[action]], `[_`, [[expression]], `_>`, [[action]]   <br/>
-| [[action]], `\\`, [[chanset expression]]   <br/>
+| [[action]], `\\`, [[chanset expression|varset]]   <br/>
 | [[action]], `startby`, [[expression]]  <br/>
 | [[action]], `endby`, [[expression]]  <br/>
 | [[action]], [[renaming expression]]   <br/>
@@ -47,13 +47,13 @@
 
 [[parallel action|action]] → <br />
 | [[action]], `||` [[action]], <br />
-| [[action]], `[|`, [[nameset expression]], `|`, [[nameset expression]], `|]`, [[action]] <br />
+| [[action]], `[|`, [[nameset expression|varset]], `|`, [[nameset expression|varset]], `|]`, [[action]] <br />
 | [[action]], `|||`, [[action]] <br />
-| [[action]], `[||`, [[chanset expression]], `|`,  [[chanset expression]], `||]`, [[action]] <br />
-| [[action]], `[`, [[chanset expression]], `||`, [[chanset expression]], `]`, [[action]] <br />
-| [[action]], `[`, [[nameset expression]], `|`, [[chanset expression]], `||`, [[chanset expression]], `|`, [[nameset expression]], `]`, [[action]] \\
-| [[action]], `[|`, [[chanset expression]], `|]`, [[action]] <br />
-| [[action]], `[|`, [[nameset expression]], `|`, [[chanset expression]], `|`, [[nameset expression]], `|]`, [[action]] <br />
+| [[action]], `[||`, [[chanset expression|varset]], `|`,  [[chanset expression|varset]], `||]`, [[action]] <br />
+| [[action]], `[`, [[chanset expression|varset]], `||`, [[chanset expression|varset]], `]`, [[action]] <br />
+| [[action]], `[`, [[nameset expression|varset]], `|`, [[chanset expression|varset]], `||`, [[chanset expression|varset]], `|`, [[nameset expression|varset]], `]`, [[action]] \\
+| [[action]], `[|`, [[chanset expression|varset]], `|]`, [[action]] <br />
+| [[action]], `[|`, [[nameset expression|varset]], `|`, [[chanset expression|varset]], `|`, [[nameset expression|varset]], `|]`, [[action]] <br />
 ;
 
 [[parametrised action|action]] → <br />
@@ -68,9 +68,9 @@
   `;`, [[replication declarations]], `@`, [[action]] <br />
 | `[]`, [[replication declarations]], `@`, [[action]] <br />
 | `|~|`, [[replication declarations]], `@`, [[action]] <br />
-| `[||`, [[nameset expression]], `||]`, [[replication declarations]], `@`, [[action]] <br />
-| `|||`, [[replication declarations]], `@`, `[`, [[nameset expression]], `]`, [[action]] <br />
-| `[|`, [[chanset expression]] `|]`, [[replication declarations]], `@`, `[` , [[nameset expression]], `]`, [[action]] <br />
-| `||`, [[replication declarations]], `@`, `[`, [[nameset expression]], `|`, [[chanset expression]], `]`, [[action]] <br />
-| `||`, [[replication declarations]], `@`, `[`, [[nameset expression]], `]`, [[action]] <br />
+| `[||`, [[nameset expression|varset]], `||]`, [[replication declarations]], `@`, [[action]] <br />
+| `|||`, [[replication declarations]], `@`, `[`, [[nameset expression|varset]], `]`, [[action]] <br />
+| `[|`, [[chanset expression|varset]] `|]`, [[replication declarations]], `@`, `[` , [[nameset expression|varset]], `]`, [[action]] <br />
+| `||`, [[replication declarations]], `@`, `[`, [[nameset expression|varset]], `|`, [[chanset expression|varset]], `]`, [[action]] <br />
+| `||`, [[replication declarations]], `@`, `[`, [[nameset expression|varset]], `]`, [[action]] <br />
 ;
