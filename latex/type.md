@@ -21,8 +21,8 @@
 | `map`, [[type]], `to`, [[type]] <br />
 | `inmap`, [[type]], `to`, [[type]] <br />
 | [[function type|type]] <br />
-| [[name]] 
-}
+| [[name]] <br />
+;
 
 [[basic type|type]] →
   `bool` 
@@ -32,27 +32,27 @@
 | `rat` 
 | `real` 
 | `char` 
-| `token`
+| `token` <br />
 ;
 
 [[field|type]] → <br />
   [[type]] <br />
 | [[identifier]], `:`, [[type]] <br />
 | [[identifier]], `:-`, [[type]]
-}
+;
 
 [[function type|type]] → <br />
   [[discretionary type|type]], `+>`, [[type]] <br />
 | [[discretionary type|type]], `->`, [[type]]
-}
+;
 
 [[discretionary type|type]] → <br />
   [[type]] <br />
 | `()`
-}
+;
 
 [[type invariant|type]] → <br />
   `inv`, [[pattern]], `==`, [[expression]]
-}
+;
 
 
