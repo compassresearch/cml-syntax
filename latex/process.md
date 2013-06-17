@@ -39,8 +39,8 @@
 | [[operation declarations]] <br />
 | [[action declarations]] <br />
 | [[nameset declarations]] <br />
-| [[state declarations]]
-}
+| [[state declarations]] <br />
+;
 
 [[renaming expression|process]] → <br />
   '[[`[[`]], [[renaming pair|process]], { `,`, [[renaming pair]] }, `]]` <br />
