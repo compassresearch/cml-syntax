@@ -24,14 +24,14 @@
 ;
 
 [[parameter types|function]] → <br />
- `(`, [ [[pattern list]], `:`, [[type]], { `,`, [[pattern list]], `:`, [[type]] } ], `)`
+ `(`, [ [[pattern list]], `:`, [[type]], { `,`, [[pattern list]], `:`, [[type]] } ], `)` <br />
 }
 
 [[identifier type pair list|function]] → <br />
-  [[identifier]], `:`, [[type]], { `,`, [[identifier]], `:`, [[type]] }
+  [[identifier]], `:`, [[type]], { `,`, [[identifier]], `:`, [[type]] } <br />
 ;
 
-[[function body]] → <br />
+[[function body|function]] → <br />
   [[expression]] <br />
 | `is not yet specified` <br />
 | `is subclass responsibility` <br />
