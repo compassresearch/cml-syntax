@@ -5,7 +5,7 @@
 | `Chaos` <br/>
 | `Div` <br/>
 | `Wait` [[expression]] <br/>
-| [[communication]], `->`, [[action]]   <br/>
+| [[communication|action]], `->`, [[action]]   <br/>
 | `[`, [[expression]], `]`, `&`, [[action]]   <br/>
 | [[action]], `;`, [[action]]   <br/>
 | [[action]], `[]`, [[action]]   <br/>
@@ -32,7 +32,7 @@
 ;
 
 [[communication parameter|action]] → <br />
-  `?`, [[bindable pattern]], [ `in` `set`, [[expression]] ] <br />
+  `?`, [[bindable pattern]], [ `:`, `(`, [[expression]], `)` ] <br />
 | `!`, [[parameter]] <br />
 | `.`, [[parameter]] <br />
 ;
