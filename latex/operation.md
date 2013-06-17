@@ -4,30 +4,30 @@ allow statements, the `;` sequential composition operator, and
 the constant action `Skip`.  In essence, operation bodies in
 CML allow only what is allowed in VDM operation bodies.
 
-[[operation declarations]] → <br />
-  `operations`, { [[operation definition]] } <br />
+[[operation declarations|operation]] → <br />
+  `operations`, { [[operation definition|operation]] } <br />
 ;
 
-[[operation definition]] → <br />
-  [[explicit operation definition]] <br />
-| [[implicit operation definition]] <br />
+[[operation definition|operation]] → <br />
+  [[explicit operation definition|operation]] <br />
+| [[implicit operation definition|operation]] <br />
 ;
 
-[[explicit operation definition]] → <br />
-  [ [[qualifier]] ], [[identifier]], `:`, [[operation type]], [[identifier]], [[parameters]], `==`, [[operation body]], [ `pre`, [[expression]] ], [ `post`, [[expression]] ] <br />
+[[explicit operation definition|operation]] → <br />
+  [ [[qualifier]] ], [[identifier]], `:`, [[operation type|type]], [[identifier]], [[parameters]], `==`, [[operation body|operation]], [ `pre`, [[expression]] ], [ `post`, [[expression]] ] <br />
 ;
 
-[[operation type]] → <br />
+[[operation type|operation]] → <br />
   [[discretionary type|type]], `==>`, [[discretionary type|type]] <br />
 ;
 
-[[operation body]] → <br />
+[[operation body|operation]] → <br />
   [[action]] <br />
 | `is subclass responsibility` <br />
 | `is not yet specified` <br />
 ;
 
-[[implicit operation definition]] → <br />
+[[implicit operation definition|operation]] → <br />
   [ [[qualifier]] ], [[identifier]], [[parameter types]], [ [[identifier type pair list]] ], [ [[frame]] ], [ `pre`, [[expression]] ], `post`, [[expression]] <br />
 ;
 
