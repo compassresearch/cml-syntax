@@ -1,6 +1,6 @@
 
 [[process]] → <br />
-  `begin`, \Sequence{[[action paragraph]]} `@`, [[action]], `end` <br />
+  `begin`, { [[action paragraph]] }, `@`, [[action]], `end` <br />
 | [[process]], `;`, [[process]] <br /> 
 | [[process]], `[]`, [[process]] <br /> 
 | [[process]], `|~|`, [[process]] <br /> 
@@ -16,7 +16,7 @@
 | [[process]], `startsby`, [[expression]] <br /> 
 | [[process]], `endsby`, [[expression]] <br /> 
 | `(`, [[parametrisation]], `@`, [[process]], `)`, `(`, [[expression]], { `,`, [[expression]] }, `)` <br /> 
-| [[identifier]], [ `(`, [ [[expression]], { `,`, [[expression]] } ], `)`} <br /> 
+| [[identifier]], [ `(`, [ [[expression]], { `,`, [[expression]] } ], `)` ] <br /> 
 | [[process]], [[renaming expression]] <br />
 | [[replicated process|process]] <br />
 | `(`, [[process]], `)` <br />
@@ -43,8 +43,8 @@
 }
 
 [[renaming expression|process]] → <br />
-  `[[`, [[renaming pair]], { `,`, [[renaming pair]] }, `]]` <br />
-| `[[`, [[renaming pair]], `|` [[bind list]], [ `@`, [[expression]] ], `]]` <br />
+  '[[`[[`]], [[renaming pair|process]], { `,`, [[renaming pair]] }, `]]` <br />
+| '[[`[[`]], [[renaming pair]], `|` [[bind list]], [ `@`, [[expression]] ], `]]` <br />
 ;
  
 [[renaming pair|process]] → <br />
