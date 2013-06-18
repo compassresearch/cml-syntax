@@ -2,7 +2,7 @@ Welcome to the cml-syntax wiki!
 
 This wiki is intended to track the state of CML grammar as it is
 implemented in the tool.  It's still a little rough at the moment, but
-we're working on it.  Contact Joey <jwc@iha.dk> if you have questions
+we're working on it.  Contact Joey (<jwc@iha.dk>) if you have questions
 or want to be added to the editing team.
 
 Sections:
