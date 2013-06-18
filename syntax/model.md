@@ -2,7 +2,7 @@
   [[model paragraph|model]], { [[model paragraph|model]] } <br />
 ;
 
-[[model paragraph]] → <br />
+[[model paragraph|model]] → <br />
   [[type declarations|declaration]] <br />
 | [[function declarations|declaration]] <br />
 | [[value declarations|declaration]] <br />
