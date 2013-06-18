@@ -21,7 +21,7 @@ then Any character in categories *Ll*, *Lm*, *Lo*, *Lt*, *Lu*, *Nd*, or the char
 else Any character, excluding categories *Cc*, *Zl*, *Zp*, *Zs*, *Cs*, *Cn*.
 
 ((LEX)) [[ascii letter|lexical]] → <br />
-Any character in the ranges [`U+0041`,`U+005A`] and [`U+0061`,`U+007A`] (A-Z and a-z, respectively).
+Any character in the ranges [`U+0041`,`U+005A`] and [`U+0061`,`U+007A`] --- A-Z and a-z, respectively.
 
 ((LEX)) [[character|lexical]] → <br />
 Is left underdefined, except to note that it may be any unicode
