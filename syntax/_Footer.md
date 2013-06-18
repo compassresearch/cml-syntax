@@ -5,6 +5,7 @@
 [[statement]],
 [[operation]],
 [[function]],
+[[expression]],
 [[type]],
 [[pattern]],
 [[varset]],
