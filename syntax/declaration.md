@@ -1,25 +1,24 @@
-
 [[value declarations|declaration]] → <br />
-  `values`, { [[value definition]] } <br />
+  `values`, { [[value definition|declaration]] } <br />
 ;
 
 [[value definition|declaration]] → <br />
-  [ [[qualifier]] ], [[bindable pattern]], [ `:`, [[type]] ], `=`, [[expression]] <br />
+  [ [[qualifier|declaration]] ], [[bindable pattern|pattern]], [ `:`, [[type]] ], `=`, [[expression]] <br />
 ;
 
 [[qualifier|declaration]] → `private` | `protected` | `public` | `logical` <br />
 ;
 
 [[channel declarations|declaration]] → <br />
-  `channels`, { [[channel name declaration]] } <br />
+  `channels`, { [[channel name declaration|declaration]] } <br />
 ;
 
 [[channel name declaration|declaration]] → <br />
-  [[identifier]], { `,`, [[identifier]] }, [ `:`, [[type]] ] <br />
+  [[identifier|lexical]], { `,`, [[identifier|lexical]] }, [ `:`, [[type]] ] <br />
 ;
 
 [[chanset declarations|declaration]] → <br />
-  `chansets`, { [[chanset definition]] } <br />
+  `chansets`, { [[chanset definition|varset]] } <br />
 ;
 
 [[chanset definition|declaration]] → <br />
