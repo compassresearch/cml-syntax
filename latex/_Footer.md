@@ -6,4 +6,6 @@
 [[operation]],
 [[function]],
 [[type]],
-[[varset]]
+[[pattern]],
+[[varset]],
+[[lexical]]
