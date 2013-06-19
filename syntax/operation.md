@@ -14,7 +14,7 @@ CML allow only what is allowed in VDM operation bodies.
 ;
 
 [[explicit operation definition|operation]] → <br />
-  [ [[qualifier]] ], [[identifier]], `:`, [[operation type|type]], [[identifier]], [[parameters]], `==`, [[operation body|operation]], [ `pre`, [[expression]] ], [ `post`, [[expression]] ] <br />
+  [ [[qualifier|declaration]] ], [[identifier|lexical]], `:`, [[operation type|type]], [[identifier|lexical]], [[parameters|function]], `==`, [[operation body|operation]], [ `pre`, [[expression]] ], [ `post`, [[expression]] ] <br />
 ;
 
 [[operation type|operation]] → <br />
@@ -28,16 +28,15 @@ CML allow only what is allowed in VDM operation bodies.
 ;
 
 [[implicit operation definition|operation]] → <br />
-  [ [[qualifier]] ], [[identifier]], [[parameter types]], [ [[identifier type pair list]] ], [ [[frame]] ], [ `pre`, [[expression]] ], `post`, [[expression]] <br />
+  [ [[qualifier|declaration]] ], [[identifier|lexical]], [[parameter types|function]], [ [[identifier type pair list|function]] ], [ [[frame|operation]] ], [ `pre`, [[expression]] ], `post`, [[expression]] <br />
 ;
 
 [[frame|operation]] → <br />
-  `frame`, [[var information]], { [[var information]] }
+  `frame`, [[var information|operation]], { [[var information|operation]] }
 ;
 
 [[var information|operation]] → <br />
-  `rd`, [[name]], { `,`, [[name]] }, [ `:`, [[type]] ] <br />
-| `wr`, [[name]], { `,`, [[name]] }, [ `:`, [[type]] ] <br />
+  `rd`, [[name|expression]], { `,`, [[name|expression]] }, [ `:`, [[type]] ] <br />
+| `wr`, [[name|expression]], { `,`, [[name|expression]] }, [ `:`, [[type]] ] <br />
 ;
-
 
