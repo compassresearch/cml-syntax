@@ -1,4 +1,3 @@
-
 [[action]] → <br />
   `Skip` <br/>
 | `Stop` <br/>
@@ -17,24 +16,24 @@
 | [[action]], `\\`, [[chanset expression|varset]]   <br/>
 | [[action]], `startby`, [[expression]]  <br/>
 | [[action]], `endby`, [[expression]]  <br/>
-| [[action]], [[renaming expression]]   <br/>
-| `mu`, [[identifier]], { `,` [[identifier]] }, `@`, `(`, [[action]], { `,` [[action]] }, `)`  <br/>
-| [[parallel action]]  <br/>
-| [[parametrised action]]  <br/>
+| [[action]], [[renaming expression|process]]   <br/>
+| `mu`, [[identifier|lexical]], { `,` [[identifier|lexical]] }, `@`, `(`, [[action]], { `,` [[action]] }, `)`  <br/>
+| [[parallel action|action]]  <br/>
+| [[parametrised action|action]]  <br/>
 | `(`, [[action]], `)`  <br/>
-| [[instantiated action]]  <br/>
-| [[replicated action]]  <br/>
+| [[instantiated action|action]]  <br/>
+| [[replicated action|action]]  <br/>
 | [[statement]]  <br/>
 ;
 
 [[communication|action]] → <br />
-  [[identifier]], { [[communication parameter|action]] } <br />
+  [[identifier|lexical]], { [[communication parameter|action]] } <br />
 ;
 
 [[communication parameter|action]] → <br />
-  `?`, [[bindable pattern]], [ `:`, `(`, [[expression]], `)` ] <br />
-| `!`, [[parameter]] <br />
-| `.`, [[parameter]] <br />
+  `?`, [[bindable pattern|pattern]], [ `:`, `(`, [[expression]], `)` ] <br />
+| `!`, [[parameter|action]] <br />
+| `.`, [[parameter|action]] <br />
 ;
 
 [[parameter|action]] → <br />
@@ -57,7 +56,7 @@
 ;
 
 [[parametrised action|action]] → <br />
-  `(` [[parametrisation]], { `,`, [[parametrisation]] }, `@`, [[action]], `)` <br />
+  `(` [[parametrisation|declaration]], { `,`, [[parametrisation|declaration]] }, `@`, [[action]], `)` <br />
 ;
 
 [[instantiated action|action]] → <br />
@@ -65,12 +64,12 @@
 ;
 
 [[replicated action|action]] → <br />
-  `;`, [[replication declarations]], `@`, [[action]] <br />
-| `[]`, [[replication declarations]], `@`, [[action]] <br />
-| `|~|`, [[replication declarations]], `@`, [[action]] <br />
-| `[||`, [[nameset expression|varset]], `||]`, [[replication declarations]], `@`, [[action]] <br />
-| `|||`, [[replication declarations]], `@`, `[`, [[nameset expression|varset]], `]`, [[action]] <br />
-| `[|`, [[chanset expression|varset]] `|]`, [[replication declarations]], `@`, `[` , [[nameset expression|varset]], `]`, [[action]] <br />
-| `||`, [[replication declarations]], `@`, `[`, [[nameset expression|varset]], `|`, [[chanset expression|varset]], `]`, [[action]] <br />
-| `||`, [[replication declarations]], `@`, `[`, [[nameset expression|varset]], `]`, [[action]] <br />
+  `;`, [[replication declarations|declaration]], `@`, [[action]] <br />
+| `[]`, [[replication declarations|declaration]], `@`, [[action]] <br />
+| `|~|`, [[replication declarations|declaration]], `@`, [[action]] <br />
+| `[||`, [[nameset expression|varset]], `||]`, [[replication declarations|declaration]], `@`, [[action]] <br />
+| `|||`, [[replication declarations|declaration]], `@`, `[`, [[nameset expression|varset]], `]`, [[action]] <br />
+| `[|`, [[chanset expression|varset]] `|]`, [[replication declarations|declaration]], `@`, `[` , [[nameset expression|varset]], `]`, [[action]] <br />
+| `||`, [[replication declarations|declaration]], `@`, `[`, [[nameset expression|varset]], `|`, [[chanset expression|varset]], `]`, [[action]] <br />
+| `||`, [[replication declarations|declaration]], `@`, `[`, [[nameset expression|varset]], `]`, [[action]] <br />
 ;
