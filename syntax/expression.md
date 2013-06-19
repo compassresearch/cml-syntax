@@ -2,7 +2,7 @@
   `self` <br />
 | [[name|expression]] <br />
 | [[old name|expression]]  <br />
-| [[symbolic literal|expression]] <br />
+| [[symbolic literal|lexical]] <br />
 | `(`, [[expression]], `)` <br />
 | [[unary operator|expression]], [[expression]] <br />
 | [[expression]], [[binary operator|expression]], [[expression]] <br />
