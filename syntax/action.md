@@ -37,11 +37,11 @@
 ;
 
 [[parameter|action]] → <br />
-  [[identifier]] <br />
+  [[identifier|lexical]] <br />
 | `(` [[expression]] `)` <br />
-| [[symbolic literal]] <br />
-| [[tuple expression]] <br />
-| [[record expression]] <br />
+| [[symbolic literal|lexical]] <br />
+| [[tuple expression|expression]] <br />
+| [[record expression|expression]] <br />
 ;
 
 [[parallel action|action]] → <br />
