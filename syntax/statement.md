@@ -1,16 +1,15 @@
-
 [[statement]] → <br />
-  `let`, [[local definition]], { `,`, [[local definition]] },  `in`, [[action]] <br />
-| `(`, [ `dcl`, [[assignment definition]], { `,`, [[assignment definition]] }, `@` ],  [[action]], `)` <br />
+  `let`, [[local definition|statement]], { `,`, [[local definition|statement]] },  `in`, [[action]] <br />
+| `(`, [ `dcl`, [[assignment definition|declaration]], { `,`, [[assignment definition|declaration]] }, `@` ],  [[action]], `)` <br />
 | [[cases statement|statement]] <br />
 | [[if statement|statement]] <br />
-| `if` [[non-deterministic alt]], { `|`, [[non-deterministic alt]] }, `end` <br />
-| `do` [[non-deterministic alt]], { `|`, [[non-deterministic alt]] }, `end` <br />
+| `if` [[non-deterministic alt|statement]], { `|`, [[non-deterministic alt|statement]] }, `end` <br />
+| `do` [[non-deterministic alt|statement]], { `|`, [[non-deterministic alt|statement]] }, `end` <br />
 | `while`, [[expression]], `do`, [[action]] <br />
-| `for`, [[bindable pattern]], [ `:`, [[type]] ] `in`, [[expression]], `do`, [[action]] <br />
-| `for`, `all`, [[bindable pattern]], `in set`, [[expression]], `do`, [[action]] <br />
-| `for`, [[identifier]], `=`, [[expression]], `to`, [[expression]], [ `by`, [[expression]] ], `do`, [[action]] <br />
-| `[`, [ [[frame]] ], [ `pre`, [[expression]] ], `post`, [[expression]], `]` <br />
+| `for`, [[bindable pattern|pattern]], [ `:`, [[type]] ] `in`, [[expression]], `do`, [[action]] <br />
+| `for`, `all`, [[bindable pattern|pattern]], `in set`, [[expression]], `do`, [[action]] <br />
+| `for`, [[identifier|lexical]], `=`, [[expression]], `to`, [[expression]], [ `by`, [[expression]] ], `do`, [[action]] <br />
+| `[`, [ [[frame|operation]] ], [ `pre`, [[expression]] ], `post`, [[expression]], `]` <br />
 | `return`, [ [[expression]] ] <br />
 | [[assign statement|statement]] <br />
 | [[multiple assign statement|statement]] <br />
@@ -19,8 +18,8 @@
 ;
 
 [[local definition|statement]] → <br />
-  [[value definition]] <br />
-| [[function definition]] <br />
+  [[value definition|declaration]] <br />
+| [[function definition|function]] <br />
 ;
 
 [[non-deterministic alt|statement]] → <br />
@@ -40,7 +39,7 @@
 ;
 
 [[cases statement alt|statement]] → <br />
-  [[pattern list]], `->`, [[action]] <br />
+  [[pattern list|pattern]], `->`, [[action]] <br />
 ;
 
 [[others statement|statement]] → <br />
@@ -48,7 +47,7 @@
 ;
 
 [[assign statement|statement]] → <br />
-  [[assignable expression]], `:=`, [[expression]] <br />
+  [[assignable expression|expression]], `:=`, [[expression]] <br />
 ;
 
 [[multiple assign statement|statement]] → <br />
@@ -56,11 +55,10 @@
 ;
 
 [[call statement|statement]] → <br />
-  [[name]], `(`, [ [[expression]], { `,`, [[expression]]  } ], `)` <br />
-| [[assignable expression]], `:=`, [[name]], `(`, [ [[expression]], { `,`, [[expression]]  } ], `)` <br />
+  [[name|expression]], `(`, [ [[expression]], { `,`, [[expression]]  } ], `)` <br />
+| [[assignable expression|expression]], `:=`, [[name|expression]], `(`, [ [[expression]], { `,`, [[expression]]  } ], `)` <br />
 ;
 
 [[new statement|statement]] → <br />
-  [[assignable expression]], `:=`, `new`, [[name]], `(`, [ [[expression]], { `,`, [[expression]]  } ], `)` <br />
+  [[assignable expression|expression]], `:=`, `new`, [[name|expression]], `(`, [ [[expression]], { `,`, [[expression]]  } ], `)` <br />
 ;
-
