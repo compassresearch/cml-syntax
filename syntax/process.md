@@ -46,6 +46,8 @@
 | '[[`[[`]], [[renaming pair|process]], `|` [[bind list|pattern]], [ `@`, [[expression]] ], `]]` <br />
 ;
  
+Note that the M20 parser only supports a single expression after an identifier in a [[renaming pair|process]]; this is the subject of issue #13.
+
 [[renaming pair|process]] → <br />
   [[identifier|lexical]], { `.`, [[expression]] }, `<-`, [[identifier|lexical]], { `.`, [[expression]] } <br />
 ;
