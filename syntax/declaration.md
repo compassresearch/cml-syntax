@@ -33,7 +33,7 @@
 [[class paragraph|declaration]] → <br />
   [[type declarations|declaration]] <br />
 | [[value declarations|declaration]] <br />
-| [[function declarations|declaration]] <br />
+| [[function declarations|function]] <br />
 | [[operation declarations|declaration]] <br />
 | [[state declarations|declaration]] <br />
 | `initial`, [[operation definition|operation]] <br />
