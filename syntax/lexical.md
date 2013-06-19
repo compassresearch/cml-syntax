@@ -31,41 +31,41 @@ the character class.  For example, character does not include `\` in
 the [[character literal|lexical]] rule.
 
 [[identifier|lexical]] → <br />
-  [[initial letter]], { [[following letter]] } <br />
+  [[initial letter|lexical]], { [[following letter|lexical]] } <br />
 ;
 
 [[digit|lexical]] → `0` | `1` | `2` | `3` | `4` | `5` | `6` | `7` | `8` | `9` <br />
 ;
 
-[[hex digit|lexical]] → [[digit]]  | `a` | `b` | `c` | `d` | `e` | `f` | `A` | `B` | `C` | `D` | `E` | `F` <br />
+[[hex digit|lexical]] → [[digit|lexical]]  | `a` | `b` | `c` | `d` | `e` | `f` | `A` | `B` | `C` | `D` | `E` | `F` <br />
 ;
 
 [[numeral|lexical]] → <br />
-  [[digit]], { [[digit]] } <br />
+  [[digit|lexical]], { [[digit|lexical]] } <br />
 ;
 
 [[symbolic literal|lexical]] → <br />
-  [[numeric literal]] <br />
-| [[boolean literal]] <br />
-| [[nil literal]] <br />
-| [[character literal]] <br />
-| [[text literal]] <br />
-| [[quote literal]] <br />
+  [[numeric literal|lexical]] <br />
+| [[boolean literal|lexical]] <br />
+| [[nil literal|lexical]] <br />
+| [[character literal|lexical]] <br />
+| [[text literal|lexical]] <br />
+| [[quote literal|lexical]] <br />
 ;
 
 [[numeric literal|lexical]] → <br />
-  [[decimal literal]] <br />
-| [[hex literal]] <br />
+  [[decimal literal|lexical]] <br />
+| [[hex literal|lexical]] <br />
 ;
 
-[[exponent|lexical]] → (`E` | `e`), [ `+` | `-`], [[numeral]] <br />
+[[exponent|lexical]] → (`E` | `e`), [ `+` | `-`], [[numeral|lexical]] <br />
 ;
 
 [[decimal literal|lexical]] → <br />
-  [[numeral]], [ `.`, [[digit]], { [[digit]] } ], [ [[exponent]] ] <br />
+  [[numeral|lexical]], [ `.`, [[digit|lexical]], { [[digit|lexical]] } ], [ [[exponent|lexical]] ] <br />
 ;
 
-[[hex literal|lexical]] → (`0x` | `0X`), [[hex digit]], { [[hex digit]] } <br />
+[[hex literal|lexical]] → (`0x` | `0X`), [[hex digit|lexical]], { [[hex digit|lexical]] } <br />
 ;
 
 [[boolean literal|lexical]] → `true` | `false` <br />
@@ -75,22 +75,19 @@ the [[character literal|lexical]] rule.
 ;
 
 [[character literal|lexical]] → <br />
-  `'`, [[character]], `'` <br />
-| `'`, [[escape sequence]], `'` <br />
+  `'`, [[character|lexical]], `'` <br />
+| `'`, [[escape sequence|lexical]], `'` <br />
 ;
 
 [[escape sequence|lexical]] → <br />
   `\\` | `\r` | `\n` | `\t` | `\f` | `\e` | `\a`| `\"`| `\'` <br />
-| `\x`, [[hex digit]], [[hex digit]] <br />
-| `\u`, [[hex digit]], [[hex digit]], [[hex digit]], [[hex digit]] <br />
-| `\c`, [[ascii letter]] <br />
+| `\x`, [[hex digit|lexical]], [[hex digit|lexical]] <br />
+| `\u`, [[hex digit|lexical]], [[hex digit|lexical]], [[hex digit|lexical]], [[hex digit|lexical]] <br />
+| `\c`, [[ascii letter|lexical]] <br />
 ;
 
-[[text literal|lexical]] → <br />
-  `"`, { [[character]] | [[escape sequence]] }, `"` <br />
+[[text literal|lexical]] → `"`, { [[character|lexical]] | [[escape sequence|lexical]] }, `"` <br />
 ;
 
-[[quote literal|lexical]] → <br />
-  `<`, [[identifier]], `>` <br />
+[[quote literal|lexical]] → `<`, [[identifier|lexical]], `>` <br />
 ;
-
