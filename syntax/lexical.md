@@ -1,3 +1,4 @@
+[Please note: the parser's implementation of this is still incomplete.  For now it's probably best to stick within the ASCII character set.]
 
 Unlike the rest of this specification, the rules in this section are
 sensitive to whitespace; as such, whitespace may not implicity
