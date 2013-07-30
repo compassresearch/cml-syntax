@@ -14,8 +14,8 @@
 | [[action]], `[_>`, [[action]]   <br/>
 | [[action]], `[_`, [[expression]], `_>`, [[action]]   <br/>
 | [[action]], `\\`, [[chanset expression|varset]]   <br/>
-| [[action]], `startby`, [[expression]]  <br/>
-| [[action]], `endby`, [[expression]]  <br/>
+| [[action]], `startsby`, [[expression]]  <br/>
+| [[action]], `endsby`, [[expression]]  <br/>
 | [[action]], [[renaming expression|process]]   <br/>
 | `mu`, [[identifier|lexical]], { `,` [[identifier|lexical]] }, `@`, `(`, [[action]], { `,` [[action]] }, `)`  <br/>
 | [[parallel action|action]]  <br/>
