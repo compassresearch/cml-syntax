@@ -88,7 +88,7 @@
 ;
 
 [[tuple select|expression]] → <br />
-  [[expression]], `.\#`, [[numeral|lexical]] <br />
+  [[expression]], `.#`, [[numeral|lexical]] <br />
 ;
 
 [[if expression|expression]] → <br />
