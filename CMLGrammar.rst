@@ -196,7 +196,7 @@ Classes
 
 |class paragraph| →
  |type declarations|_ 
- | |value declarations|
+ | |value declarations|_
  | |function declarations|_
  | |operation declarations|_
  | |state declarations|_
