@@ -211,7 +211,7 @@ Processes
 .. _`process`:
 
 |process| →
- ``begin``, { |action paragraph|_ }, ``@``, |action|_, ``end``
+ |action process|_
  | |process|_, ``;``, |process|_
  | |process|_, ``[]``, |process|_
  | |process|_, ``|~|``, |process|_
@@ -231,6 +231,13 @@ Processes
  | |process|_, |renaming expression|_
  | |replicated process|_
  | ``(``, |process|_, ``)``
+ ;
+
+.. |action process| replace:: *action process*
+.. _`action process`:
+
+|action process| →
+ ``begin``, { |action paragraph|_ }, ``@``, |action|_, ``end``
  ;
 
 .. |replicated process| replace:: *replicated process*
