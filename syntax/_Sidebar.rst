@@ -1,6 +1,6 @@
 `whole#Actions`_
 
-[[Actions]]
+[[whole#Actions]]
 
 [[whole|Actions]]
 
