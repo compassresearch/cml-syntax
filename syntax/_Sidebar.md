@@ -1,1 +1,3 @@
-[[_TOC_]]
+[[whole|Declarations]]
+
+[[Declarations|whole]]
