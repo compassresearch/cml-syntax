@@ -521,10 +521,10 @@ Statements
 |  |name|_, ``(``, [ |expression|_, { ``,``, |expression|_ } ], ``)``
 |  | |assignable expression|_, ``:=``, |name|_, ``(``, [ |expression|_, { ``,``, |expression|_ } ], ``)``
 |  ;
-|
-| .. |new statement| replace:: *new statement*
-| .. _`new statement`:
-|
+
+.. |new statement| replace:: *new statement*
+.. _`new statement`:
+
 | |new statement| →
 |  |assignable expression|_, ``:=``, ``new``, |name|_, ``(``, [ |expression|_, { ``,``, |expression|_ } ], ``)``
 |  ;
@@ -1036,41 +1036,42 @@ for a future release.
 .. |initial letter| replace:: *initial letter*
 .. _`initial letter`:
 
-| |initial letter| →
-|  if ``codepoint < U+0100``
-|  then Any character in categories *Ll*, *Lm*, *Lo*, *Lt*, *Lu*, or the character ``U+0024`` (``\$``)
-|  else Any character, excluding categories *Cc*, *Zl*, *Zp*, *Zs*, *Cs*, *Cn*, *Nd*, *Pc*.
-|  ;
+|initial letter| →
+ if ``codepoint < U+0100``
+ then Any character in categories *Ll*, *Lm*, *Lo*, *Lt*, *Lu*, or the character ``U+0024`` (``\$``)
+ else Any character, excluding categories *Cc*, *Zl*, *Zp*, *Zs*, *Cs*, *Cn*, *Nd*, *Pc*.
+ ;
 
 .. |following letter| replace:: *following letter*
 .. _`following letter`:
 
-| |following letter| →
-|  if ``codepoint < U+0100``
-|  then Any character in categories *Ll*, *Lm*, *Lo*, *Lt*, *Lu*, *Nd*, or the characters ``U+0024`` (``\$``), ``U+0027`` (``'``), and ``U+005F`` (``_``)
-|  else Any character, excluding categories *Cc*, *Zl*, *Zp*, *Zs*, *Cs*, *Cn*.
-|  ;
+|following letter| →
+ if ``codepoint < U+0100``
+ then Any character in categories *Ll*, *Lm*, *Lo*, *Lt*, *Lu*, *Nd*, or the characters ``U+0024`` (``\$``), ``U+0027`` (``'``), and ``U+005F`` (``_``)
+ else Any character, excluding categories *Cc*, *Zl*, *Zp*, *Zs*, *Cs*, *Cn*.
+ ;
 
 .. |ascii letter| replace:: *ascii letter*
 .. _`ascii letter`:
 
-| |ascii letter| →
-|  Any character in the ranges [``U+0041``,\ ``U+005A``] and
-|  [``U+0061``, ``U+007A``] --- A-Z and a-z, respectively.
-|  ;
+|ascii letter| →
+ Any character in the ranges [``U+0041``,\ ``U+005A``] and
+ [``U+0061``, ``U+007A``] --- A-Z and a-z, respectively.
+ ;
 
 .. |character| replace:: *character*
 .. _`character`:
 
-| |character| →
-|  Is left underdefined, except to note that it may be any unicode
-|  character except those that conflict with the lexical rule that uses
-|  the character class. For example, character does not include ``\`` in
-|  the |character literal|_ rule.
-|
-| .. |identifier| replace:: *identifier*
-| .. _`identifier`:
-|
+|character| →
+ Is left underdefined, except to note that it may be any unicode
+ character except those that conflict with the lexical rule that uses
+ the character class. For example, character does not include ``\`` in
+ the |character literal|_ rule.
+ ;
+
+.. |identifier| replace:: *identifier*
+.. _`identifier`:
+
 | |identifier| →
 |  |initial letter|_, { |following letter|_ }
 |  ;
