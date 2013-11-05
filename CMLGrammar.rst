@@ -11,7 +11,8 @@ Top Level model
 .. _model:
 
 |model| →
- |model paragraph|_, { |model paragraph|_ } ;
+ |model paragraph|_, { |model paragraph|_ }
+ ;
 
 .. |model paragraph| replace:: *model paragraph*
 .. _`model paragraph`:
@@ -24,7 +25,9 @@ Top Level model
  | |chanset declarations|_ 
  | |class declaration|_ 
  | |process declaration|_ 
+ | |configuration block|_
  ;
+
 
 Declarations
 ------------
@@ -33,7 +36,8 @@ Declarations
 .. _`value declarations`:
 
 |value declarations| →
- ``values``, { |value definition|_ } ;
+ ``values``, [ ``(``, |identifier|_, ``)`` ], { |value definition|_ }
+ ;
 
 .. |value definition| replace:: *value definition*
 .. _`value definition`:
@@ -53,7 +57,7 @@ Declarations
 .. _`channel declarations`:
 
 |channel declarations| →
- ``channels``, { |channel name declarations|_ }
+ ``channels``, [ ``(``, |identifier|_, ``)`` ], { |channel name declarations|_ }
  ;
 
 .. |channel name declarations| replace:: *channel name declarations*
@@ -67,7 +71,7 @@ Declarations
 .. _`chanset declarations`:
 
 |chanset declarations| →
- ``chansets``, { |chanset definition|_ }
+ ``chansets``, [ ``(``, |identifier|_, ``)`` ], { |chanset definition|_ }
  ;
 
 .. |chanset definition| replace:: *chanset definition*
@@ -181,6 +185,17 @@ to ``val``, and is permitted as well.)
 
 |nameset expression| →
  |chanset expression|_
+ ;
+
+
+Configuration Blocks
+--------------------
+
+.. |configuration block| replace:: *configuration block*
+.. _`configuration block`:
+
+|configuration block| →
+ ``configuration``, |identifier|_ , [ ``extends``, |identifier|_ ], ``includes``, |identifier|_, { ``,``, |identifier|_ }, ``end``
  ;
 
 
@@ -518,7 +533,7 @@ Types
 .. _`type declarations`:
 
 |type declarations| →
- ``types``, [ |type definition|_, { ``;``, |type definition|_ } ]
+ ``types``, [ ``(``, |identifier|_, ``)`` ], [ |type definition|_, { ``;``, |type definition|_ } ]
  ;
 
 .. |type definition| replace:: *type definition*
@@ -665,7 +680,7 @@ Functions
 .. _`function declarations`:
 
 |function declarations| →
- ``functions``, { |function definition|_ } 
+ ``functions``, [ ``(``, |identifier|_, ``)`` ], { |function definition|_ } 
  ;
 
 .. |function definition| replace:: *function definition*
@@ -726,7 +741,6 @@ Functions
  | ``is not yet specified``
  | ``is subclass responsibility`` 
  ;
-
 
 
 Expressions
@@ -916,6 +930,7 @@ Expressions
  | ``.#``, |numeral|_
  | ``.``, |identifier|_ 
  ;
+
 
 Patterns
 --------
