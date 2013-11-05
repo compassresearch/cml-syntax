@@ -10,23 +10,23 @@ Top Level model
 .. |model| replace:: *model*
 .. _model:
 
-|model| →
- |model paragraph|_, { |model paragraph|_ }
- ;
+| |model| →
+|  |model paragraph|_, { |model paragraph|_ }
+|  ;
 
 .. |model paragraph| replace:: *model paragraph*
 .. _`model paragraph`:
 
-|model paragraph| →
- |type declarations|_
- | |function declarations|_
- | |value declarations|_ 
- | |channel declarations|_ 
- | |chanset declarations|_ 
- | |class declaration|_ 
- | |process declaration|_ 
- | |configuration block|_
- ;
+| |model paragraph| →
+|  |type declarations|_
+|  | |function declarations|_
+|  | |value declarations|_ 
+|  | |channel declarations|_ 
+|  | |chanset declarations|_ 
+|  | |class declaration|_ 
+|  | |process declaration|_ 
+|  | |configuration block|_
+|  ;
 
 
 Declarations
@@ -35,106 +35,106 @@ Declarations
 .. |value declarations| replace:: *value declarations*
 .. _`value declarations`:
 
-|value declarations| →
- ``values``, [ ``(``, |identifier|_, ``)`` ], { |value definition|_ }
- ;
+| |value declarations| →
+|  ``values``, [ ``(``, |identifier|_, ``)`` ], { |value definition|_ }
+|  ;
 
 .. |value definition| replace:: *value definition*
 .. _`value definition`:
 
-|value definition| →
- [ |qualifier|_ ], |bindable pattern|_, [ ``:``, |type|_ ], ``=``, |expression|_
- ;
+| |value definition| →
+|  [ |qualifier|_ ], |bindable pattern|_, [ ``:``, |type|_ ], ``=``, |expression|_
+|  ;
 
 .. |qualifier| replace:: *qualifier*
 .. _`qualifier`:
 
-|qualifier| →
- ``private`` | ``protected`` | ``public`` | ``logical``
- ;
+| |qualifier| →
+|  ``private`` | ``protected`` | ``public`` | ``logical``
+|  ;
 
 .. |channel declarations| replace:: *channel declarations*
 .. _`channel declarations`:
 
-|channel declarations| →
- ``channels``, [ ``(``, |identifier|_, ``)`` ], { |channel name declarations|_ }
- ;
+| |channel declarations| →
+|  ``channels``, [ ``(``, |identifier|_, ``)`` ], { |channel name declarations|_ }
+|  ;
 
 .. |channel name declarations| replace:: *channel name declarations*
 .. _`channel name declarations`:
 
-|channel name declarations| →
- |identifier|_, { ``,``, |identifier|_ }, [ ``:``, |type|_ ]
- ;
+| |channel name declarations| →
+|  |identifier|_, { ``,``, |identifier|_ }, [ ``:``, |type|_ ]
+|  ;
 
 .. |chanset declarations| replace:: *chanset declarations*
 .. _`chanset declarations`:
 
-|chanset declarations| →
- ``chansets``, [ ``(``, |identifier|_, ``)`` ], { |chanset definition|_ }
- ;
+| |chanset declarations| →
+|  ``chansets``, [ ``(``, |identifier|_, ``)`` ], { |chanset definition|_ }
+|  ;
 
 .. |chanset definition| replace:: *chanset definition*
 .. _`chanset definition`:
 
-|chanset definition| →
- |identifier|_, ``=``, |chanset expression|_ ;
+| |chanset definition| →
+|  |identifier|_, ``=``, |chanset expression|_ ;
 
 .. |nameset declarations| replace:: *nameset declarations*
 .. _`nameset declarations`:
 
-|nameset declarations| →
- ``namesets``, { |nameset definition|_ }
- ;
+| |nameset declarations| →
+|  ``namesets``, { |nameset definition|_ }
+|  ;
 
 .. |nameset definition| replace:: *nameset definition*
 .. _`nameset definition`:
 
-|nameset definition| →
- identifier|_, ``=``, |nameset expression|
- ;
+| |nameset definition| →
+|  identifier|_, ``=``, |nameset expression|
+|  ;
 
 .. |state declarations| replace:: *state declarations*
 .. _`state declarations`:
 
-|state declarations| →
- ``state``, { |instance variable definition|_ }
- ;
+| |state declarations| →
+|  ``state``, { |instance variable definition|_ }
+|  ;
 
 .. |instance variable definition| replace:: *instance variable definition*
 .. _`instance variable definition`:
 
-|instance variable definition| →
- [ |qualifier|_ ], |assignment definition|_
- | |invariant definition|_
- ;
+| |instance variable definition| →
+|  [ |qualifier|_ ], |assignment definition|_
+|  | |invariant definition|_
+|  ;
 
 .. |assignment definition| replace:: *assignment definition*
 .. _`assignment definition`:
 
-|assignment definition| →
- |identifier|_, ``:``, |type|_, [ |assignment definition value|_ ]
- ;
+| |assignment definition| →
+|  |identifier|_, ``:``, |type|_, [ |assignment definition value|_ ]
+|  ;
 
 .. |assignment definition value| replace:: *assignment definition value*
 .. _`assignment definition value`:
 
-|assignment definition value| →
- ``:=``, |expression|_
- | ``in``, |expression|_
- ;
+| |assignment definition value| →
+|  ``:=``, |expression|_
+|  | ``in``, |expression|_
+|  ;
 
 .. |invariant definition| replace:: *invariant definition*
 .. _`invariant definition`:
 
-|invariant definition| →
- ``inv``, |expression|_ ;
+| |invariant definition| →
+|  ``inv``, |expression|_ ;
 
 .. |process declaration| replace:: *process declaration*
 .. _`process declaration`:
 
-|process declaration| →
- ``process``, |identifier|_, ``=``, [ |parametrisation|_, ``@`` ], |process|_ ;
+| |process declaration| →
+|  ``process``, |identifier|_, ``=``, [ |parametrisation|_, ``@`` ], |process|_ ;
 
 Note: the only parametrisation qualifier allowed in a process
 declaration is ``val``. (Omitting a parametrisation qualifier defaults
@@ -143,49 +143,49 @@ to ``val``, and is permitted as well.)
 .. |parametrisation| replace:: *parametrisation*
 .. _`parametrisation`:
 
-|parametrisation| →
- [ |parametrisation qualifier|_ ], |identifier|_, { ``,``, |identifier|_ }, ``:``, |type|_
- ;
+| |parametrisation| →
+|  [ |parametrisation qualifier|_ ], |identifier|_, { ``,``, |identifier|_ }, ``:``, |type|_
+|  ;
 
 .. |parametrisation qualifier| replace:: *parametrisation qualifier*
 .. _`parametrisation qualifier`:
 
-|parametrisation qualifier| →
- ``val`` | ``res`` | ``vres``
- ;
+| |parametrisation qualifier| →
+|  ``val`` | ``res`` | ``vres``
+|  ;
 
 .. |action declarations| replace:: *action declarations*
 .. _`action declarations`:
 
-|action declarations| →
- ``actions``, { |action definition|_ }
- ;
+| |action declarations| →
+|  ``actions``, { |action definition|_ }
+|  ;
 
 .. |action definition| replace:: *action definition*
 .. _`action definition`:
 
-|action definition| →
- |identifier|_, ``=``, [ |parametrisation|_, ``@`` ], |action|_
- ;
+| |action definition| →
+|  |identifier|_, ``=``, [ |parametrisation|_, ``@`` ], |action|_
+|  ;
 
 .. |chanset expression| replace:: *chanset expression*
 .. _`chanset expression`:
 
-|chanset expression| →
- |identifier|_
- | ``{``, [ |identifier|_, { ``,``, |identifier|_ } ], ``}``
- | ``{|``, [ |identifier|_, { ``,``, |identifier|_ } ], ``|}``
- | ``{|``, |identifier|_, { ``.``, |expression|_ }, ``|`` |bind list|_, [ ``@``, |expression|_ ], ``|}``
- | |chanset expression|_, ``union``, |chanset expression|_
- | |chanset expression|_, ``inter``, |chanset expression|_
- | |chanset expression|_, ``\``, |chanset expression|_ ;
+| |chanset expression| →
+|  |identifier|_
+|  | ``{``, [ |identifier|_, { ``,``, |identifier|_ } ], ``}``
+|  | ``{|``, [ |identifier|_, { ``,``, |identifier|_ } ], ``|}``
+|  | ``{|``, |identifier|_, { ``.``, |expression|_ }, ``|`` |bind list|_, [ ``@``, |expression|_ ], ``|}``
+|  | |chanset expression|_, ``union``, |chanset expression|_
+|  | |chanset expression|_, ``inter``, |chanset expression|_
+|  | |chanset expression|_, ``\``, |chanset expression|_ ;
 
 .. |nameset expression| replace:: *nameset expression*
 .. _`nameset expression`:
 
-|nameset expression| →
- |chanset expression|_
- ;
+| |nameset expression| →
+|  |chanset expression|_
+|  ;
 
 
 Configuration Blocks
@@ -194,9 +194,9 @@ Configuration Blocks
 .. |configuration block| replace:: *configuration block*
 .. _`configuration block`:
 
-|configuration block| →
- ``configuration``, |identifier|_ , [ ``extends``, |identifier|_ ], ``includes``, |identifier|_, { ``,``, |identifier|_ }, ``end``
- ;
+| |configuration block| →
+|  ``configuration``, |identifier|_ , [ ``extends``, |identifier|_ ], ``includes``, |identifier|_, { ``,``, |identifier|_ }, ``end``
+|  ;
 
 
 Classes
@@ -205,21 +205,21 @@ Classes
 .. |class declaration| replace:: *class declaration*
 .. _`class declaration`:
 
-|class declaration| →
- ``class``, |identifier|_, [ ``extends``, |identifier|_ ], ``=``, ``begin``, { |class paragraph|_ }, ``end``
- ;
+| |class declaration| →
+|  ``class``, |identifier|_, [ ``extends``, |identifier|_ ], ``=``, ``begin``, { |class paragraph|_ }, ``end``
+|  ;
 
 .. |class paragraph| replace:: *class paragraph*
 .. _`class paragraph`:
 
-|class paragraph| →
- |type declarations|_ 
- | |value declarations|_
- | |function declarations|_
- | |operation declarations|_
- | |state declarations|_
- | ``initial``, |operation definition|_
- ;
+| |class paragraph| →
+|  |type declarations|_ 
+|  | |value declarations|_
+|  | |function declarations|_
+|  | |operation declarations|_
+|  | |state declarations|_
+|  | ``initial``, |operation definition|_
+|  ;
 
 
 Processes
@@ -228,93 +228,93 @@ Processes
 .. |process| replace:: *process*
 .. _`process`:
 
-|process| →
- |action process|_
- | |process|_, ``;``, |process|_
- | |process|_, ``[]``, |process|_
- | |process|_, ``|~|``, |process|_
- | |process|_, ``[|``, |chanset expression|_, ``|]``, |process|_
- | |process|_, ``[``, |chanset expression|_, ``||``, |chanset expression|_, ``]``, |process|_
- | |process|_, ``||``, |process|_
- | |process|_, ``|||``, |process|_
- | |process|_, ``/_\``, |process|_
- | |process|_, ``/_``, |expression|_, ``_\``, |process|_
- | |process|_, ``[_>``, |process|_
- | |process|_, ``[_``, |expression|_, ``_>``, |process|_
- | |process|_, ``\\``, |chanset expression|_
- | |process|_, ``startsby``, |expression|_
- | |process|_, ``endsby``, |expression|_
- | ``(``, |parametrisation|_, ``@``, |process|_, ``)``, ``(``, |expression|_, { ``,``, |expression|_ }, ``)``
- | |identifier|_, [ ``(``, [ |expression|_, { ``,``, |expression|_ } ], ``)`` ]
- | |process|_, |renaming expression|_
- | |replicated process|_
- | ``(``, |process|_, ``)``
- ;
+| |process| →
+|  |action process|_
+|  | |process|_, ``;``, |process|_
+|  | |process|_, ``[]``, |process|_
+|  | |process|_, ``|~|``, |process|_
+|  | |process|_, ``[|``, |chanset expression|_, ``|]``, |process|_
+|  | |process|_, ``[``, |chanset expression|_, ``||``, |chanset expression|_, ``]``, |process|_
+|  | |process|_, ``||``, |process|_
+|  | |process|_, ``|||``, |process|_
+|  | |process|_, ``/_\``, |process|_
+|  | |process|_, ``/_``, |expression|_, ``_\``, |process|_
+|  | |process|_, ``[_>``, |process|_
+|  | |process|_, ``[_``, |expression|_, ``_>``, |process|_
+|  | |process|_, ``\\``, |chanset expression|_
+|  | |process|_, ``startsby``, |expression|_
+|  | |process|_, ``endsby``, |expression|_
+|  | ``(``, |parametrisation|_, ``@``, |process|_, ``)``, ``(``, |expression|_, { ``,``, |expression|_ }, ``)``
+|  | |identifier|_, [ ``(``, [ |expression|_, { ``,``, |expression|_ } ], ``)`` ]
+|  | |process|_, |renaming expression|_
+|  | |replicated process|_
+|  | ``(``, |process|_, ``)``
+|  ;
 
 .. |action process| replace:: *action process*
 .. _`action process`:
 
-|action process| →
- ``begin``, { |action paragraph|_ }, ``@``, |action|_, ``end``
- ;
+| |action process| →
+|  ``begin``, { |action paragraph|_ }, ``@``, |action|_, ``end``
+|  ;
 
 .. |replicated process| replace:: *replicated process*
 .. _`replicated process`:
 
-|replicated process| →
- ``;``, |replication declarations|_, ``@``, |process|_
- | ``[]``, |replication declarations|_, ``@``, |process|_
- | ``|~|``, |replication declarations|_, ``@``, |process|_
- | ``[|``, |chanset expression|_, ``|]``, |replication declarations|_, ``@``, |process|_
- | ``||``, |replication declarations|_, ``@``, ``[``, |chanset expression|_, ``]``, |process|_
- | ``||``, |replication declarations|_, ``@``, |process|_
- | ``|||``, |replication declarations|_, ``@``, |process|_
- ;
+| |replicated process| →
+|  ``;``, |replication declarations|_, ``@``, |process|_
+|  | ``[]``, |replication declarations|_, ``@``, |process|_
+|  | ``|~|``, |replication declarations|_, ``@``, |process|_
+|  | ``[|``, |chanset expression|_, ``|]``, |replication declarations|_, ``@``, |process|_
+|  | ``||``, |replication declarations|_, ``@``, ``[``, |chanset expression|_, ``]``, |process|_
+|  | ``||``, |replication declarations|_, ``@``, |process|_
+|  | ``|||``, |replication declarations|_, ``@``, |process|_
+|  ;
 
 .. |action paragraph| replace:: *action paragraph*
 .. _`action paragraph`:
 
-|action paragraph| →
- |type declarations|_
- | |value declarations|_
- | |function declarations|_
- | |operation declarations|_
- | |action declarations|_
- | |nameset declarations|_
- | |state declarations|_ 
- ;
+| |action paragraph| →
+|  |type declarations|_
+|  | |value declarations|_
+|  | |function declarations|_
+|  | |operation declarations|_
+|  | |action declarations|_
+|  | |nameset declarations|_
+|  | |state declarations|_ 
+|  ;
 
 .. |renaming expression| replace:: *renaming expression*
 .. _`renaming expression`:
 
-|renaming expression| →
- ``[[``, |renaming pair|_, { ``,``, |renaming pair|_ }, ``]]``
- | ``[[``, |renaming pair|_, ``|`` |bind list|_, [ ``@``, |expression|_ ], ``]]`` 
- ;
+| |renaming expression| →
+|  ``[[``, |renaming pair|_, { ``,``, |renaming pair|_ }, ``]]``
+|  | ``[[``, |renaming pair|_, ``|`` |bind list|_, [ ``@``, |expression|_ ], ``]]`` 
+|  ;
 
 Note that the M20 parser only supports a single expression after an identifier in a |renaming pair|_; this is the subject of issue #13.
 
 .. |renaming pair| replace:: *renaming pair*
 .. _`renaming pair`:
 
-|renaming pair| →
- |identifier|_, { ``.``, |expression|_ }, ``<-``, |identifier|_, { ``.``, |expression|_ } 
- ;
+| |renaming pair| →
+|  |identifier|_, { ``.``, |expression|_ }, ``<-``, |identifier|_, { ``.``, |expression|_ } 
+|  ;
 
 .. |replication declarations| replace:: *replication declarations*
 .. _`replication declarations`:
 
-|replication declarations| →
- |replication declaration|_, { ``,``, |replication declaration|_ } 
- ;
+| |replication declarations| →
+|  |replication declaration|_, { ``,``, |replication declaration|_ } 
+|  ;
 
 .. |replication declaration| replace:: *replication declaration*
 .. _`replication declaration`:
 
-|replication declaration| →
- |identifier|_, { ``,``, |identifier|_ }, ``:``, |type|_
- | |identifier|_, { ``,``, |identifier|_ }, ``in`` ``set``, |expression|_ 
- ;
+| |replication declaration| →
+|  |identifier|_, { ``,``, |identifier|_ }, ``:``, |type|_
+|  | |identifier|_, { ``,``, |identifier|_ }, ``in`` ``set``, |expression|_ 
+|  ;
 
 
 Actions
@@ -323,102 +323,102 @@ Actions
 .. |action| replace:: *action*
 .. _`action`:
 
-|action| →
- ``Skip``
- | ``Stop``
- | ``Chaos``
- | ``Div``
- | ``Wait`` |expression|_
- | |communication|_, ``->``, |action|_
- | ``[``, |expression|_, ``]``, ``&``, |action|_
- | |action|_, ``;``, |action|_
- | |action|_, ``[]``, |action|_
- | |action|_, ``|~|``, |action|_
- | |action|_, ``/_\``, |action|_
- | |action|_, ``/_``, |expression|_, ``_\``, |action|_
- | |action|_, ``[_>``, |action|_
- | |action|_, ``[_``, |expression|_, ``_>``, |action|_
- | |action|_, ``\\``, |chanset expression|_
- | |action|_, ``startsby``, |expression|_
- | |action|_, ``endsby``, |expression|_
- | |action|_, |renaming expression|_
- | ``mu``, |identifier|_, { ``,`` |identifier|_ }, ``@``, ``(``, |action|_, { ``,`` |action|_ }, ``)``
- | |parallel action|_
- | |parametrised action|_
- | ``(``, |action|_, ``)``
- | |instantiated action|_
- | |replicated action|_
- | |statement|_
- ;
+| |action| →
+|  ``Skip``
+|  | ``Stop``
+|  | ``Chaos``
+|  | ``Div``
+|  | ``Wait`` |expression|_
+|  | |communication|_, ``->``, |action|_
+|  | ``[``, |expression|_, ``]``, ``&``, |action|_
+|  | |action|_, ``;``, |action|_
+|  | |action|_, ``[]``, |action|_
+|  | |action|_, ``|~|``, |action|_
+|  | |action|_, ``/_\``, |action|_
+|  | |action|_, ``/_``, |expression|_, ``_\``, |action|_
+|  | |action|_, ``[_>``, |action|_
+|  | |action|_, ``[_``, |expression|_, ``_>``, |action|_
+|  | |action|_, ``\\``, |chanset expression|_
+|  | |action|_, ``startsby``, |expression|_
+|  | |action|_, ``endsby``, |expression|_
+|  | |action|_, |renaming expression|_
+|  | ``mu``, |identifier|_, { ``,`` |identifier|_ }, ``@``, ``(``, |action|_, { ``,`` |action|_ }, ``)``
+|  | |parallel action|_
+|  | |parametrised action|_
+|  | ``(``, |action|_, ``)``
+|  | |instantiated action|_
+|  | |replicated action|_
+|  | |statement|_
+|  ;
 
 .. |communication| replace:: *communication*
 .. _`communication`:
 
-|communication| →
- |identifier|_, { |communication parameter|_ } 
- ;
+| |communication| →
+|  |identifier|_, { |communication parameter|_ } 
+|  ;
 
 .. |communication parameter| replace:: *communication parameter*
 .. _`communication parameter`:
 
-|communication parameter| →
- ``?``, |bindable pattern|_, [ ``:``, ``(``, |expression|_, ``)`` ]
- | ``!``, |parameter|_
- | ``.``, |parameter|_ 
- ;
+| |communication parameter| →
+|  ``?``, |bindable pattern|_, [ ``:``, ``(``, |expression|_, ``)`` ]
+|  | ``!``, |parameter|_
+|  | ``.``, |parameter|_ 
+|  ;
 
 .. |parameter| replace:: *parameter*
 .. _`parameter`:
 
-|parameter| →
- |identifier|_
- | ``(`` |expression|_ ``)``
- | |symbolic literal|_
- | |tuple expression|_
- | |record expression|_ 
- ;
+| |parameter| →
+|  |identifier|_
+|  | ``(`` |expression|_ ``)``
+|  | |symbolic literal|_
+|  | |tuple expression|_
+|  | |record expression|_ 
+|  ;
 
 .. |parallel action| replace:: *parallel action*
 .. _`parallel action`:
 
-|parallel action| →
- |action|_, ``||`` |action|_,
- | |action|_, ``[|``, |nameset expression|_, ``|``, |nameset expression|_, ``|]``, |action|_
- | |action|_, ``|||``, |action|_
- | |action|_, ``[||``, |chanset expression|_, ``|``, |chanset expression|_, ``||]``, |action|_
- | |action|_, ``[``, |chanset expression|_, ``||``, |chanset expression|_, ``]``, |action|_
- | |action|_, ``[``, |nameset expression|_, ``|``, |chanset expression|_, ``||``, |chanset expression|_, ``|``, |nameset expression|_, ``]``, |action|_
- | |action|_, ``[|``, |chanset expression|_, ``|]``, |action|_
- | |action|_, ``[|``, |nameset expression|_, ``|``, |chanset expression|_, ``|``, |nameset expression|_, ``|]``, |action|_ 
- ;
+| |parallel action| →
+|  |action|_, ``||`` |action|_,
+|  | |action|_, ``[|``, |nameset expression|_, ``|``, |nameset expression|_, ``|]``, |action|_
+|  | |action|_, ``|||``, |action|_
+|  | |action|_, ``[||``, |chanset expression|_, ``|``, |chanset expression|_, ``||]``, |action|_
+|  | |action|_, ``[``, |chanset expression|_, ``||``, |chanset expression|_, ``]``, |action|_
+|  | |action|_, ``[``, |nameset expression|_, ``|``, |chanset expression|_, ``||``, |chanset expression|_, ``|``, |nameset expression|_, ``]``, |action|_
+|  | |action|_, ``[|``, |chanset expression|_, ``|]``, |action|_
+|  | |action|_, ``[|``, |nameset expression|_, ``|``, |chanset expression|_, ``|``, |nameset expression|_, ``|]``, |action|_ 
+|  ;
 
 .. |parametrised action| replace:: *parametrised action*
 .. _`parametrised action`:
 
-|parametrised action| →
- ``(`` |parametrisation|_, { ``,``, |parametrisation|_ }, ``@``, |action|_, ``)`` 
- ;
+| |parametrised action| →
+|  ``(`` |parametrisation|_, { ``,``, |parametrisation|_ }, ``@``, |action|_, ``)`` 
+|  ;
 
 .. |instantiated action| replace:: *instantiated action*
 .. _`instantiated action`:
 
-|instantiated action| →
- |parametrised action|_, ``(``, |expression|_, { ``,``, |expression|_ }, ``)`` 
- ;
+| |instantiated action| →
+|  |parametrised action|_, ``(``, |expression|_, { ``,``, |expression|_ }, ``)`` 
+|  ;
 
 .. |replicated action| replace:: *replicated action*
 .. _`replicated action`:
 
-|replicated action| →
- ``;``, |replication declarations|_, ``@``, |action|_
- | ``[]``, |replication declarations|_, ``@``, |action|_
- | ``|~|``, |replication declarations|_, ``@``, |action|_
- | ``[||``, |nameset expression|_, ``||]``, |replication declarations|_, ``@``, |action|_
- | ``|||``, |replication declarations|_, ``@``, ``[``, |nameset expression|_, ``]``, |action|_
- | ``[|``, |chanset expression|_ ``|]``, |replication declarations|_, ``@``, ``[`` , |nameset expression|_, ``]``, |action|_
- | ``||``, |replication declarations|_, ``@``, ``[``, |nameset expression|_, ``|``, |chanset expression|_, ``]``, |action|_
- | ``||``, |replication declarations|_, ``@``, ``[``, |nameset expression|_, ``]``, |action|_
- ;
+| |replicated action| →
+|  ``;``, |replication declarations|_, ``@``, |action|_
+|  | ``[]``, |replication declarations|_, ``@``, |action|_
+|  | ``|~|``, |replication declarations|_, ``@``, |action|_
+|  | ``[||``, |nameset expression|_, ``||]``, |replication declarations|_, ``@``, |action|_
+|  | ``|||``, |replication declarations|_, ``@``, ``[``, |nameset expression|_, ``]``, |action|_
+|  | ``[|``, |chanset expression|_ ``|]``, |replication declarations|_, ``@``, ``[`` , |nameset expression|_, ``]``, |action|_
+|  | ``||``, |replication declarations|_, ``@``, ``[``, |nameset expression|_, ``|``, |chanset expression|_, ``]``, |action|_
+|  | ``||``, |replication declarations|_, ``@``, ``[``, |nameset expression|_, ``]``, |action|_
+|  ;
 
 
 Statements
@@ -427,103 +427,103 @@ Statements
 .. |statement| replace:: *statement*
 .. _`statement`:
 
-|statement| →
- ``let``, |local definition|_, { ``,``, |local definition|_ }, ``in``, |action|_
- | ``(``, [ ``dcl``, |assignment definition|_, { ``,``, |assignment definition|_ }, ``@`` ], |action|_, ``)``
- | |cases statement|_
- | |if statement|_
- | ``if`` |non-deterministic alt|_, { ``|``, |non-deterministic alt|_ }, ``end``
- | ``do`` |non-deterministic alt|_, { ``|``, |non-deterministic alt|_ }, ``end``
- | ``while``, |expression|_, ``do``, |action|_
- | ``for``, |bindable pattern|_, [ ``:``, |type|_ ] ``in``, |expression|_, ``do``, |action|_
- | ``for``, ``all``, |bindable pattern|_, ``in set``, |expression|_, ``do``, |action|_
- | ``for``, |identifier|_, ``=``, |expression|_, ``to``, |expression|_, [ ``by``, |expression|_ ], ``do``, |action|_
- | ``[``, [ |frame|_ ], [ ``pre``, |expression|_ ], ``post``, |expression|_, ``]``
- | ``return``, [ |expression|_ ]
- | |assign statement|_
- | |multiple assign statement|_
- | |call statement|_
- | |new statement|_ 
- ;
+| |statement| →
+|  ``let``, |local definition|_, { ``,``, |local definition|_ }, ``in``, |action|_
+|  | ``(``, [ ``dcl``, |assignment definition|_, { ``,``, |assignment definition|_ }, ``@`` ], |action|_, ``)``
+|  | |cases statement|_
+|  | |if statement|_
+|  | ``if`` |non-deterministic alt|_, { ``|``, |non-deterministic alt|_ }, ``end``
+|  | ``do`` |non-deterministic alt|_, { ``|``, |non-deterministic alt|_ }, ``end``
+|  | ``while``, |expression|_, ``do``, |action|_
+|  | ``for``, |bindable pattern|_, [ ``:``, |type|_ ] ``in``, |expression|_, ``do``, |action|_
+|  | ``for``, ``all``, |bindable pattern|_, ``in set``, |expression|_, ``do``, |action|_
+|  | ``for``, |identifier|_, ``=``, |expression|_, ``to``, |expression|_, [ ``by``, |expression|_ ], ``do``, |action|_
+|  | ``[``, [ |frame|_ ], [ ``pre``, |expression|_ ], ``post``, |expression|_, ``]``
+|  | ``return``, [ |expression|_ ]
+|  | |assign statement|_
+|  | |multiple assign statement|_
+|  | |call statement|_
+|  | |new statement|_ 
+|  ;
 
 .. |local definition| replace:: *local definition*
 .. _`local definition`:
 
-|local definition| →
- |value definition|_
- | |function definition|_ 
- ;
+| |local definition| →
+|  |value definition|_
+|  | |function definition|_ 
+|  ;
 
 .. |non-deterministic alt| replace:: *non-deterministic alt*
 .. _`non-deterministic alt`:
 
-|non-deterministic alt| →
- |expression|_, ``->``, |action|_ 
- ;
+| |non-deterministic alt| →
+|  |expression|_, ``->``, |action|_ 
+|  ;
 
 .. |if statement| replace:: *if statement*
 .. _`if statement`:
 
-|if statement| →
- ``if``, |expression|_, ``then``, |action|_, { |elseif statement|_ }, [ ``else``, |action|_ ] 
- ;
+| |if statement| →
+|  ``if``, |expression|_, ``then``, |action|_, { |elseif statement|_ }, [ ``else``, |action|_ ] 
+|  ;
 
 .. |elseif statement| replace:: *elseif statement*
 .. _`elseif statement`:
 
-|elseif statement| →
- ``elseif``, |expression|_, ``then``, |action|_ 
- ;
+| |elseif statement| →
+|  ``elseif``, |expression|_, ``then``, |action|_ 
+|  ;
 
 .. |cases statement| replace:: *cases statement*
 .. _`cases statement`:
 
-|cases statement| →
- ``cases``, |expression|_, ``:``, |cases statement alt|_, { ``,``, |cases statement alt|_ }, [ ``,``, |others statement|_ ], ``end`` 
- ;
+| |cases statement| →
+|  ``cases``, |expression|_, ``:``, |cases statement alt|_, { ``,``, |cases statement alt|_ }, [ ``,``, |others statement|_ ], ``end`` 
+|  ;
 
 .. |cases statement alt| replace:: *cases statement alt*
 .. _`cases statement alt`:
 
-|cases statement alt| →
- |pattern list|_, ``->``, |action|_ 
- ;
+| |cases statement alt| →
+|  |pattern list|_, ``->``, |action|_ 
+|  ;
 
 .. |others statement| replace:: *others statement*
 .. _`others statement`:
 
-|others statement| →
- ``others``, ``->``, |action|_ 
- ;
+| |others statement| →
+|  ``others``, ``->``, |action|_ 
+|  ;
 
 .. |assign statement| replace:: *assign statement*
 .. _`assign statement`:
 
-|assign statement| →
- |assignable expression|_, ``:=``, |expression|_ 
- ;
+| |assign statement| →
+|  |assignable expression|_, ``:=``, |expression|_ 
+|  ;
 
 .. |multiple assign statement| replace:: *multiple assign statement*
 .. _`multiple assign statement`:
 
-|multiple assign statement| →
- ``atomic``, ``(``, |assign statement|_, ``;``, |assign statement|_, { ``;``, |assign statement|_ }, ``)``
- ;
+| |multiple assign statement| →
+|  ``atomic``, ``(``, |assign statement|_, ``;``, |assign statement|_, { ``;``, |assign statement|_ }, ``)``
+|  ;
 
 .. |call statement| replace:: *call statement*
 .. _`call statement`:
 
-|call statement| →
- |name|_, ``(``, [ |expression|_, { ``,``, |expression|_ } ], ``)``
- | |assignable expression|_, ``:=``, |name|_, ``(``, [ |expression|_, { ``,``, |expression|_ } ], ``)`` 
- ; 
-
-.. |new statement| replace:: *new statement*
-.. _`new statement`:
-
-|new statement| →
- |assignable expression|_, ``:=``, ``new``, |name|_, ``(``, [ |expression|_, { ``,``, |expression|_ } ], ``)`` 
- ;
+| |call statement| →
+|  |name|_, ``(``, [ |expression|_, { ``,``, |expression|_ } ], ``)``
+|  | |assignable expression|_, ``:=``, |name|_, ``(``, [ |expression|_, { ``,``, |expression|_ } ], ``)`` 
+|  ; 
+| 
+| .. |new statement| replace:: *new statement*
+| .. _`new statement`:
+| 
+| |new statement| →
+|  |assignable expression|_, ``:=``, ``new``, |name|_, ``(``, [ |expression|_, { ``,``, |expression|_ } ], ``)`` 
+|  ;
 
 
 Types
@@ -532,75 +532,75 @@ Types
 .. |type declarations| replace:: *type declarations*
 .. _`type declarations`:
 
-|type declarations| →
- ``types``, [ ``(``, |identifier|_, ``)`` ], [ |type definition|_, { ``;``, |type definition|_ } ]
- ;
+| |type declarations| →
+|  ``types``, [ ``(``, |identifier|_, ``)`` ], [ |type definition|_, { ``;``, |type definition|_ } ]
+|  ;
 
 .. |type definition| replace:: *type definition*
 .. _`type definition`:
 
-|type definition| →
- [ |qualifier|_ ], |identifier|_, ``=``, |type|_, [ |type invariant|_ ]
- | [ |qualifier|_ ], |identifier|_, ``::``, { |field|_ }, [ |type invariant|_ ] }
- ;
+| |type definition| →
+|  [ |qualifier|_ ], |identifier|_, ``=``, |type|_, [ |type invariant|_ ]
+|  | [ |qualifier|_ ], |identifier|_, ``::``, { |field|_ }, [ |type invariant|_ ] }
+|  ;
 
 .. |type| replace:: *type*
 .. _`type`:
 
-|type| →
- ``(``, |type|_, ``)``
- | |basic type|_
- | |quote literal|_
- | ``compose``, |identifier|_, ``of``, { |field|_ }, ``end``
- | |type|_, ``|``, |type|_, { ``|``, |type|_ }
- | |type|_, ``*``, |type|_, { ``*``, |type|_ }
- | ``[``, |type|_, ``]``
- | ``set`` ``of``, |type|_
- | ``seq`` ``of``, |type|_
- | ``seq1`` ``of``, |type|_
- | ``map``, |type|_, ``to``, |type|_
- | ``inmap``, |type|_, ``to``, |type|_
- | |function type|_
- | |name|_
- ;
+| |type| →
+|  ``(``, |type|_, ``)``
+|  | |basic type|_
+|  | |quote literal|_
+|  | ``compose``, |identifier|_, ``of``, { |field|_ }, ``end``
+|  | |type|_, ``|``, |type|_, { ``|``, |type|_ }
+|  | |type|_, ``*``, |type|_, { ``*``, |type|_ }
+|  | ``[``, |type|_, ``]``
+|  | ``set`` ``of``, |type|_
+|  | ``seq`` ``of``, |type|_
+|  | ``seq1`` ``of``, |type|_
+|  | ``map``, |type|_, ``to``, |type|_
+|  | ``inmap``, |type|_, ``to``, |type|_
+|  | |function type|_
+|  | |name|_
+|  ;
 
 .. |basic type| replace:: *basic type*
 .. _`basic type`:
 
-|basic type| →
- ``bool`` | ``nat`` | ``nat1`` | ``int`` | ``rat`` | ``real`` | ``char`` | ``token``
- ;
+| |basic type| →
+|  ``bool`` | ``nat`` | ``nat1`` | ``int`` | ``rat`` | ``real`` | ``char`` | ``token``
+|  ;
 
 .. |field| replace:: *field*
 .. _`field`:
 
-|field| →
- |type|_
- | |identifier|_, ``:``, |type|_
- | |identifier|_, ``:-``, |type|_
- ;
+| |field| →
+|  |type|_
+|  | |identifier|_, ``:``, |type|_
+|  | |identifier|_, ``:-``, |type|_
+|  ;
 
 .. |function type| replace:: *function type*
 .. _`function type`:
 
-|function type| →
- |discretionary type|_, ``+>``, |type|_
- | |discretionary type|_, ``->``, |type|_
- ;
+| |function type| →
+|  |discretionary type|_, ``+>``, |type|_
+|  | |discretionary type|_, ``->``, |type|_
+|  ;
 
 .. |discretionary type| replace:: *discretionary type*
 .. _`discretionary type`:
 
-|discretionary type| →
- |type|_ | ``()``
- ;
+| |discretionary type| →
+|  |type|_ | ``()``
+|  ;
 
 .. |type invariant| replace:: *type invariant*
 .. _`type invariant`:
 
-|type invariant| →
- ``inv``, |pattern|_, ``==``, |expression|_
- ;
+| |type invariant| →
+|  ``inv``, |pattern|_, ``==``, |expression|_
+|  ;
 
 
 Operations
@@ -615,62 +615,62 @@ allowed in VDM operation bodies.
 .. |operation declarations| replace:: *operation declarations*
 .. _`operation declarations`:
 
-|operation declarations| →
- ``operations``, { |operation definition|_ } 
- ;
+| |operation declarations| →
+|  ``operations``, { |operation definition|_ } 
+|  ;
 
 .. |operation definition| replace:: *operation definition*
 .. _`operation definition`:
 
-|operation definition| →
- |explicit operation definition|_
- | |implicit operation definition|_ 
- ;
+| |operation definition| →
+|  |explicit operation definition|_
+|  | |implicit operation definition|_ 
+|  ;
 
 .. |explicit operation definition| replace:: *explicit operation definition*
 .. _`explicit operation definition`:
 
-|explicit operation definition| →
- [ |qualifier|_ ], |identifier|_, ``:``, |operation type|_, |identifier|_, |parameters|_, ``==``, |operation body|_, [ ``pre``, |expression|_ ], [ ``post``, |expression|_ ] 
- ;
+| |explicit operation definition| →
+|  [ |qualifier|_ ], |identifier|_, ``:``, |operation type|_, |identifier|_, |parameters|_, ``==``, |operation body|_, [ ``pre``, |expression|_ ], [ ``post``, |expression|_ ] 
+|  ;
 
 .. |operation type| replace:: *operation type*
 .. _`operation type`:
 
-|operation type| →
- |discretionary type|_, ``==>``, |discretionary type|_ 
- ;
+| |operation type| →
+|  |discretionary type|_, ``==>``, |discretionary type|_ 
+|  ;
 
 .. |operation body| replace:: *operation body*
 .. _`operation body`:
 
-|operation body| →
- |action|_
- | ``is subclass responsibility``
- | ``is not yet specified`` 
- ;
+| |operation body| →
+|  |action|_
+|  | ``is subclass responsibility``
+|  | ``is not yet specified`` 
+|  ;
 
 .. |implicit operation definition| replace:: *implicit operation definition*
 .. _`implicit operation definition`:
 
-|implicit operation definition| →
- [ |qualifier|_ ], |identifier|_, |parameter types|_, [ |identifier type pair list|_ ], [ |frame|_ ], [ ``pre``, |expression|_ ], ``post``, |expression|_ 
- ;
+| |implicit operation definition| →
+|  [ |qualifier|_ ], |identifier|_, |parameter types|_, [ |identifier type pair list|_ ], [ |frame|_ ], [ ``pre``, |expression|_ ], ``post``, |expression|_ 
+|  ;
 
 .. |frame| replace:: *frame*
 .. _`frame`:
 
-|frame| →
- ``frame``, |var information|_, { |var information|_ } 
- ;
+| |frame| →
+|  ``frame``, |var information|_, { |var information|_ } 
+|  ;
 
 .. |var information| replace:: *var information*
 .. _`var information`:
 
-|var information| →
- ``rd``, |name|_, { ``,``, |name|_ }, [ ``:``, |type|_ ]
- | ``wr``, |name|_, { ``,``, |name|_ }, [ ``:``, |type|_ ] 
- ;
+| |var information| →
+|  ``rd``, |name|_, { ``,``, |name|_ }, [ ``:``, |type|_ ]
+|  | ``wr``, |name|_, { ``,``, |name|_ }, [ ``:``, |type|_ ] 
+|  ;
 
 
 Functions
@@ -679,68 +679,68 @@ Functions
 .. |function declarations| replace:: *function declarations*
 .. _`function declarations`:
 
-|function declarations| →
- ``functions``, [ ``(``, |identifier|_, ``)`` ], { |function definition|_ } 
- ;
+| |function declarations| →
+|  ``functions``, [ ``(``, |identifier|_, ``)`` ], { |function definition|_ } 
+|  ;
 
 .. |function definition| replace:: *function definition*
 .. _`function definition`:
 
-|function definition| →
- |explicit function definition|_
- | |implicit function definition|_ 
- ;
+| |function definition| →
+|  |explicit function definition|_
+|  | |implicit function definition|_ 
+|  ;
 
 .. |explicit function definition| replace:: *explicit function definition*
 .. _`explicit function definition`:
 
-|explicit function definition| →
- [ |qualifier|_ ], |identifier|_, ``:``, |function type|_, |identifier|_, |parameters list|_, ``==``, |function body|_, [ ``pre``, |expression|_ ], [ ``post``, |expression|_ ], [ ``measure``, |name|_ ] 
- ;
+| |explicit function definition| →
+|  [ |qualifier|_ ], |identifier|_, ``:``, |function type|_, |identifier|_, |parameters list|_, ``==``, |function body|_, [ ``pre``, |expression|_ ], [ ``post``, |expression|_ ], [ ``measure``, |name|_ ] 
+|  ;
 
 .. |parameters list| replace:: *parameters list*
 .. _`parameters list`:
 
-|parameters list| →
- |parameters|_, { |parameters|_ } 
- ;
+| |parameters list| →
+|  |parameters|_, { |parameters|_ } 
+|  ;
 
 .. |parameters| replace:: *parameters*
 .. _`parameters`:
 
-|parameters| →
- ``(``, [ |pattern list|_ ], ``)`` 
- ;
+| |parameters| →
+|  ``(``, [ |pattern list|_ ], ``)`` 
+|  ;
 
 .. |implicit function definition| replace:: *implicit function definition*
 .. _`implicit function definition`:
 
-|implicit function definition| →
- [ |qualifier|_ ], |identifier|_, |parameter types|_, |identifier type pair list|_, [ ``pre``, |expression|_ ], ``post``, |expression|_ 
- ;
+| |implicit function definition| →
+|  [ |qualifier|_ ], |identifier|_, |parameter types|_, |identifier type pair list|_, [ ``pre``, |expression|_ ], ``post``, |expression|_ 
+|  ;
 
 .. |parameter types| replace:: *parameter types*
 .. _`parameter types`:
 
-|parameter types| →
- ``(``, [ |pattern list|_, ``:``, |type|_, { ``,``, |pattern list|_, ``:``, |type|_ } ], ``)`` } 
- ;
+| |parameter types| →
+|  ``(``, [ |pattern list|_, ``:``, |type|_, { ``,``, |pattern list|_, ``:``, |type|_ } ], ``)`` } 
+|  ;
 
 .. |identifier type pair list| replace:: *identifier type pair list*
 .. _`identifier type pair list`:
 
-|identifier type pair list| →
- |identifier|_, ``:``, |type|_, { ``,``, |identifier|_, ``:``, |type|_ } 
- ;
+| |identifier type pair list| →
+|  |identifier|_, ``:``, |type|_, { ``,``, |identifier|_, ``:``, |type|_ } 
+|  ;
 
 .. |function body| replace:: *function body*
 .. _`function body`:
 
-|function body| →
- |expression|_
- | ``is not yet specified``
- | ``is subclass responsibility`` 
- ;
+| |function body| →
+|  |expression|_
+|  | ``is not yet specified``
+|  | ``is subclass responsibility`` 
+|  ;
 
 
 Expressions
@@ -749,187 +749,187 @@ Expressions
 .. |expression| replace:: *expression*
 .. _`expression`:
 
-|expression| →
- ``self``
- | |name|_
- | |old name|_
- | |symbolic literal|_
- | ``(``, |expression|_, ``)``
- | |unary operator|_, |expression|_
- | |expression|_, |binary operator|_, |expression|_
- | ``let``, |local definition|_, { ``,``, |local definition|_ }, ``in``, |expression|_
- | ``forall``, |bind list|_, ``@``, |expression|_
- | ``exists``, |bind list|_, ``@``, |expression|_
- | ``exists1``, |bind|_, ``@``, |expression|_
- | ``iota``, |bind|_, ``@``, |expression|_
- | ``lambda``, |type bind list|_, ``@``, |expression|_
- | ``is_``, ``(``, |expression|_, ``,``, |type|_, ``)``
- | ``is_``, |basic type|_, ``(``, |expression|_, ``)``
- | ``is_``, |name|_, ``(``, |expression|_, ``)``
- | ``pre_``, ``(``, |expression|_, { ``,``, |expression|_ }, ``)``
- | ``isofclass``, ``(``, |name|_, |expression|_, ``)``
- | |tuple expression|_
- | |record expression|_
- | |set expression|_
- | |sequence expression|_
- | |subsequence|_
- | |map expression|_
- | |if expression|_
- | |cases expression|_
- | |apply|_
- | |field select|_
- | |tuple select|_ 
- ;
+| |expression| →
+|  ``self``
+|  | |name|_
+|  | |old name|_
+|  | |symbolic literal|_
+|  | ``(``, |expression|_, ``)``
+|  | |unary operator|_, |expression|_
+|  | |expression|_, |binary operator|_, |expression|_
+|  | ``let``, |local definition|_, { ``,``, |local definition|_ }, ``in``, |expression|_
+|  | ``forall``, |bind list|_, ``@``, |expression|_
+|  | ``exists``, |bind list|_, ``@``, |expression|_
+|  | ``exists1``, |bind|_, ``@``, |expression|_
+|  | ``iota``, |bind|_, ``@``, |expression|_
+|  | ``lambda``, |type bind list|_, ``@``, |expression|_
+|  | ``is_``, ``(``, |expression|_, ``,``, |type|_, ``)``
+|  | ``is_``, |basic type|_, ``(``, |expression|_, ``)``
+|  | ``is_``, |name|_, ``(``, |expression|_, ``)``
+|  | ``pre_``, ``(``, |expression|_, { ``,``, |expression|_ }, ``)``
+|  | ``isofclass``, ``(``, |name|_, |expression|_, ``)``
+|  | |tuple expression|_
+|  | |record expression|_
+|  | |set expression|_
+|  | |sequence expression|_
+|  | |subsequence|_
+|  | |map expression|_
+|  | |if expression|_
+|  | |cases expression|_
+|  | |apply|_
+|  | |field select|_
+|  | |tuple select|_ 
+|  ;
 
 .. |name| replace:: *name*
 .. _`name`:
 
-|name| →
- |identifier|_, [ ``.``, |identifier|_ ] 
- ;
+| |name| →
+|  |identifier|_, [ ``.``, |identifier|_ ] 
+|  ;
 
 .. |old name| replace:: *old name*
 .. _`old name`:
 
-|old name| →
- |identifier|_, ``~`` 
- ;
+| |old name| →
+|  |identifier|_, ``~`` 
+|  ;
 
 .. |unary operator| replace:: *unary operator*
 .. _`unary operator`:
 
-|unary operator| →
- ``+`` | ``-`` | ``abs`` | ``floor`` | ``not`` | ``card`` | ``power`` | ``dunion`` | ``dinter`` | ``hd`` | ``tl`` | ``len`` | ``elems`` | ``inds`` | ``reverse`` | ``conc`` | ``dom`` | ``rng`` | ``merge`` | ``inverse`` 
- ;
+| |unary operator| →
+|  ``+`` | ``-`` | ``abs`` | ``floor`` | ``not`` | ``card`` | ``power`` | ``dunion`` | ``dinter`` | ``hd`` | ``tl`` | ``len`` | ``elems`` | ``inds`` | ``reverse`` | ``conc`` | ``dom`` | ``rng`` | ``merge`` | ``inverse`` 
+|  ;
 
 .. |binary operator| replace:: *binary operator*
 .. _`binary operator`:
 
-|binary operator| →
- ``+`` | ``-`` | ``*`` | ``/`` | ``div`` | ``rem`` | ``mod`` | ``<`` | ``<=`` | ``>`` | ``>=`` | ``=`` | ``<>`` | ``or`` | ``and`` | ``=>`` | ``<=>`` | ``in`` ``set`` | ``not`` ``in`` ``set`` | ``subset`` | ``psubset`` | ``union`` | ``\`` | ``inter`` | ``^`` | ``++`` | ``munion`` | ``<:`` | ``<-:`` | ``:>`` | ``:->`` | ``comp`` | ``**`` 
- ;
+| |binary operator| →
+|  ``+`` | ``-`` | ``*`` | ``/`` | ``div`` | ``rem`` | ``mod`` | ``<`` | ``<=`` | ``>`` | ``>=`` | ``=`` | ``<>`` | ``or`` | ``and`` | ``=>`` | ``<=>`` | ``in`` ``set`` | ``not`` ``in`` ``set`` | ``subset`` | ``psubset`` | ``union`` | ``\`` | ``inter`` | ``^`` | ``++`` | ``munion`` | ``<:`` | ``<-:`` | ``:>`` | ``:->`` | ``comp`` | ``**`` 
+|  ;
 
 .. |tuple expression| replace:: *tuple expression*
 .. _`tuple expression`:
 
-|tuple expression| →
- ``mk_``, ``(``, |expression|_, ``,``, |expression|_, { ``,``, |expression|_ }, ``)`` 
- ;
+| |tuple expression| →
+|  ``mk_``, ``(``, |expression|_, ``,``, |expression|_, { ``,``, |expression|_ }, ``)`` 
+|  ;
 
 .. |record expression| replace:: *record expression*
 .. _`record expression`:
 
-|record expression| →
- ``mk_``, ``token``, ``(``, |expression|_, ``)``
- | ``mk_``, |name|_, ``(``, [ |expression|_, { ``,``, |expression|_ } ], ``)`` 
- ;
+| |record expression| →
+|  ``mk_``, ``token``, ``(``, |expression|_, ``)``
+|  | ``mk_``, |name|_, ``(``, [ |expression|_, { ``,``, |expression|_ } ], ``)`` 
+|  ;
 
 .. |set expression| replace:: *set expression*
 .. _`set expression`:
 
-|set expression| →
- ``{``, [ |expression|_, { ``,``, |expression|_ } ], ``}``
- | ``{``, |expression|_, ``|``, |bind list|_, [ ``@``, |expression|_ ], ``}``
- | ``{``, |expression|_, ``,``, ``...``, ``,``, |expression|_, ``}`` 
- ;
+| |set expression| →
+|  ``{``, [ |expression|_, { ``,``, |expression|_ } ], ``}``
+|  | ``{``, |expression|_, ``|``, |bind list|_, [ ``@``, |expression|_ ], ``}``
+|  | ``{``, |expression|_, ``,``, ``...``, ``,``, |expression|_, ``}`` 
+|  ;
 
 .. |sequence expression| replace:: *sequence expression*
 .. _`sequence expression`:
 
-|sequence expression| →
- ``[``, [ |expression|_, { ``,``, |expression|_ } ], ``]``
- | ``[``, |expression|_, ``|``, |set bind|_, [ ``@``, |expression|_ ], ``]`` 
- ;
+| |sequence expression| →
+|  ``[``, [ |expression|_, { ``,``, |expression|_ } ], ``]``
+|  | ``[``, |expression|_, ``|``, |set bind|_, [ ``@``, |expression|_ ], ``]`` 
+|  ;
 
 .. |subsequence| replace:: *subsequence*
 .. _`subsequence`:
 
-|subsequence| →
- |expression|_, ``(``, |expression|_, ``,``, ``...``, ``,``, |expression|_, ``)`` 
- ;
+| |subsequence| →
+|  |expression|_, ``(``, |expression|_, ``,``, ``...``, ``,``, |expression|_, ``)`` 
+|  ;
 
 .. |map expression| replace:: *map expression*
 .. _`map expression`:
 
-|map expression| →
- ``{``, ``|->``, ``}``
- | ``{``, |maplet|_, { ``,``, |maplet|_ }, ``}``
- | ``{``, |maplet|_, ``|``, |bind list|_, [ ``@``, |expression|_ ], ``}`` 
- ;
+| |map expression| →
+|  ``{``, ``|->``, ``}``
+|  | ``{``, |maplet|_, { ``,``, |maplet|_ }, ``}``
+|  | ``{``, |maplet|_, ``|``, |bind list|_, [ ``@``, |expression|_ ], ``}`` 
+|  ;
 
 .. |maplet| replace:: *maplet*
 .. _`maplet`:
 
-|maplet| →
- |expression|_, ``|->``, |expression|_ 
- ;
+| |maplet| →
+|  |expression|_, ``|->``, |expression|_ 
+|  ;
 
 .. |apply| replace:: *apply*
 .. _`apply`:
 
-|apply| →
- |expression|_, ``(``, [ |expression|_, { ``,``, |expression|_ } ], ``)`` 
- ;
+| |apply| →
+|  |expression|_, ``(``, [ |expression|_, { ``,``, |expression|_ } ], ``)`` 
+|  ;
 
 .. |field select| replace:: *field select*
 .. _`field select`:
 
-|field select| →
- |expression|_, ``.``, |identifier|_ 
- ;
+| |field select| →
+|  |expression|_, ``.``, |identifier|_ 
+|  ;
 
 .. |tuple select| replace:: *tuple select*
 .. _`tuple select`:
 
-|tuple select| →
- |expression|_, ``.#``, |numeral|_ 
- ;
+| |tuple select| →
+|  |expression|_, ``.#``, |numeral|_ 
+|  ;
 
 .. |if expression| replace:: *if expression*
 .. _`if expression`:
 
-|if expression| →
- ``if``, |expression|_, ``then``, |expression|_, { |elseif expression|_ }, ``else``, |expression|_ 
- ;
+| |if expression| →
+|  ``if``, |expression|_, ``then``, |expression|_, { |elseif expression|_ }, ``else``, |expression|_ 
+|  ;
 
 .. |elseif expression| replace:: *elseif expression*
 .. _`elseif expression`:
 
-|elseif expression| →
- ``elseif``, |expression|_, ``then``, |expression|_ 
- ;
+| |elseif expression| →
+|  ``elseif``, |expression|_, ``then``, |expression|_ 
+|  ;
 
 .. |cases expression| replace:: *cases expression*
 .. _`cases expression`:
 
-|cases expression| →
- ``cases``, |expression|_, ``:``, |cases expression alternatives|_, [ ``,``, ``others`` ``->`` |expression|_ ], ``end`` 
- ;
+| |cases expression| →
+|  ``cases``, |expression|_, ``:``, |cases expression alternatives|_, [ ``,``, ``others`` ``->`` |expression|_ ], ``end`` 
+|  ;
 
 .. |cases expression alternatives| replace:: *cases expression alternatives*
 .. _`cases expression alternatives`:
 
-|cases expression alternatives| →
- |pattern list|_, ``->``, |expression|_, { ``,``, |pattern list|_, ``->``, |expression|_ } 
- ;
+| |cases expression alternatives| →
+|  |pattern list|_, ``->``, |expression|_, { ``,``, |pattern list|_, ``->``, |expression|_ } 
+|  ;
 
 .. |assignable expression| replace:: *assignable expression*
 .. _`assignable expression`:
 
-|assignable expression| →
- ``self`` { |selector|_ }
- | |identifier|_ { |selector|_ } 
- ;
+| |assignable expression| →
+|  ``self`` { |selector|_ }
+|  | |identifier|_ { |selector|_ } 
+|  ;
 
 .. |selector| replace:: *selector*
 .. _`selector`:
 
-|selector| →
- ``(``, [ |expression|_, { ``,``, |expression|_ } ], ``)``
- | ``(``, |expression|_, ``...``, |expression|_, ``)``
- | ``.#``, |numeral|_
- | ``.``, |identifier|_ 
- ;
+| |selector| →
+|  ``(``, [ |expression|_, { ``,``, |expression|_ } ], ``)``
+|  | ``(``, |expression|_, ``...``, |expression|_, ``)``
+|  | ``.#``, |numeral|_
+|  | ``.``, |identifier|_ 
+|  ;
 
 
 Patterns
@@ -938,79 +938,79 @@ Patterns
 .. |pattern| replace:: *pattern*
 .. _`pattern`:
 
-|pattern| →
- |bindable pattern|_
- | |match value|_ 
- ;
+| |pattern| →
+|  |bindable pattern|_
+|  | |match value|_ 
+|  ;
 
 .. |bindable pattern| replace:: *bindable pattern*
 .. _`bindable pattern`:
 
-|bindable pattern| →
- ``-``
- | |identifier|_
- | ``mk_``, ``(``, |pattern|_, ``,``, |pattern list|_, ``)``
- | ``mk_``, |name|_, ``(``, [ |pattern list|_ ], ``)`` 
- ;
+| |bindable pattern| →
+|  ``-``
+|  | |identifier|_
+|  | ``mk_``, ``(``, |pattern|_, ``,``, |pattern list|_, ``)``
+|  | ``mk_``, |name|_, ``(``, [ |pattern list|_ ], ``)`` 
+|  ;
 
 .. |match value| replace:: *match value*
 .. _`match value`:
 
-|match value| →
- ``(``, |expression|_, ``)``
- | |symbolic literal|_ 
- ;
+| |match value| →
+|  ``(``, |expression|_, ``)``
+|  | |symbolic literal|_ 
+|  ;
 
 .. |pattern list| replace:: *pattern list*
 .. _`pattern list`:
 
-|pattern list| →
- |pattern|_, { ``,``, |pattern|_ } 
- ;
+| |pattern list| →
+|  |pattern|_, { ``,``, |pattern|_ } 
+|  ;
 
 .. |bind| replace:: *bind*
 .. _`bind`:
 
-|bind| →
- |set bind|_
- | |type bind|_ 
- ;
+| |bind| →
+|  |set bind|_
+|  | |type bind|_ 
+|  ;
 
 .. |set bind| replace:: *set bind*
 .. _`set bind`:
 
-|set bind| →
- |pattern|_, ``in`` ``set``, |expression|_ 
- ;
+| |set bind| →
+|  |pattern|_, ``in`` ``set``, |expression|_ 
+|  ;
 
 .. |type bind| replace:: *type bind*
 .. _`type bind`:
 
-|type bind| →
- |pattern|_, ``:``, |type|_ 
- ;
+| |type bind| →
+|  |pattern|_, ``:``, |type|_ 
+|  ;
 
 .. |bind list| replace:: *bind list*
 .. _`bind list`:
 
-|bind list| →
- |multiple bind|_, { ``,``, |multiple bind|_ } 
- ;
+| |bind list| →
+|  |multiple bind|_, { ``,``, |multiple bind|_ } 
+|  ;
 
 .. |multiple bind| replace:: *multiple bind*
 .. _`multiple bind`:
 
-|multiple bind| →
- |pattern list|_, ``in`` ``set``, |expression|_
- | |pattern list|_, ``:``, |type|_ 
- ;
+| |multiple bind| →
+|  |pattern list|_, ``in`` ``set``, |expression|_
+|  | |pattern list|_, ``:``, |type|_ 
+|  ;
 
 .. |type bind list| replace:: *type bind list*
 .. _`type bind list`:
 
-|type bind list| →
- |type bind|_, { ``,``, |type bind|_ } 
- ;
+| |type bind list| →
+|  |type bind|_, { ``,``, |type bind|_ } 
+|  ;
 
 
 Lexical Specification
@@ -1032,148 +1032,148 @@ for a future release.
 .. |initial letter| replace:: *initial letter*
 .. _`initial letter`:
 
-|initial letter| →
- if ``codepoint < U+0100``
- then Any character in categories *Ll*, *Lm*, *Lo*, *Lt*, *Lu*, or the character ``U+0024`` (``\$``)
- else Any character, excluding categories *Cc*, *Zl*, *Zp*, *Zs*, *Cs*, *Cn*, *Nd*, *Pc*.
- ;
+| |initial letter| →
+|  if ``codepoint < U+0100``
+|  then Any character in categories *Ll*, *Lm*, *Lo*, *Lt*, *Lu*, or the character ``U+0024`` (``\$``)
+|  else Any character, excluding categories *Cc*, *Zl*, *Zp*, *Zs*, *Cs*, *Cn*, *Nd*, *Pc*.
+|  ;
 
 .. |following letter| replace:: *following letter*
 .. _`following letter`:
 
-|following letter| →
- if ``codepoint < U+0100``
- then Any character in categories *Ll*, *Lm*, *Lo*, *Lt*, *Lu*, *Nd*, or the characters ``U+0024`` (``\$``), ``U+0027`` (``'``), and ``U+005F`` (``_``)
- else Any character, excluding categories *Cc*, *Zl*, *Zp*, *Zs*, *Cs*, *Cn*.
- ;
+| |following letter| →
+|  if ``codepoint < U+0100``
+|  then Any character in categories *Ll*, *Lm*, *Lo*, *Lt*, *Lu*, *Nd*, or the characters ``U+0024`` (``\$``), ``U+0027`` (``'``), and ``U+005F`` (``_``)
+|  else Any character, excluding categories *Cc*, *Zl*, *Zp*, *Zs*, *Cs*, *Cn*.
+|  ;
 
 .. |ascii letter| replace:: *ascii letter*
 .. _`ascii letter`:
 
-|ascii letter| →
- Any character in the ranges [``U+0041``,\ ``U+005A``] and
- [``U+0061``, ``U+007A``] --- A-Z and a-z, respectively.
- ;
+| |ascii letter| →
+|  Any character in the ranges [``U+0041``,\ ``U+005A``] and
+|  [``U+0061``, ``U+007A``] --- A-Z and a-z, respectively.
+|  ;
 
 .. |character| replace:: *character*
 .. _`character`:
 
-|character| →
- Is left underdefined, except to note that it may be any unicode
- character except those that conflict with the lexical rule that uses
- the character class. For example, character does not include ``\`` in
- the |character literal|_ rule.
-
-.. |identifier| replace:: *identifier*
-.. _`identifier`:
-
-|identifier| →
- |initial letter|_, { |following letter|_ }
- ;
+| |character| →
+|  Is left underdefined, except to note that it may be any unicode
+|  character except those that conflict with the lexical rule that uses
+|  the character class. For example, character does not include ``\`` in
+|  the |character literal|_ rule.
+| 
+| .. |identifier| replace:: *identifier*
+| .. _`identifier`:
+| 
+| |identifier| →
+|  |initial letter|_, { |following letter|_ }
+|  ;
 
 .. |digit| replace:: *digit*
 .. _`digit`:
 
-|digit| →
- ``0`` | ``1`` | ``2`` | ``3`` | ``4`` | ``5`` | ``6`` | ``7`` | ``8`` | ``9``
- ;
+| |digit| →
+|  ``0`` | ``1`` | ``2`` | ``3`` | ``4`` | ``5`` | ``6`` | ``7`` | ``8`` | ``9``
+|  ;
 
 .. |hex digit| replace:: *hex digit*
 .. _`hex digit`:
 
-|hex digit| →
- |digit|_ | ``a`` | ``b`` | ``c`` | ``d`` | ``e`` | ``f`` | ``A`` | ``B`` | ``C`` | ``D`` | ``E`` | ``F``
- ;
+| |hex digit| →
+|  |digit|_ | ``a`` | ``b`` | ``c`` | ``d`` | ``e`` | ``f`` | ``A`` | ``B`` | ``C`` | ``D`` | ``E`` | ``F``
+|  ;
 
 .. |numeral| replace:: *numeral*
 .. _`numeral`:
 
-|numeral| →
- |digit|_, { |digit|_ }
- ;
+| |numeral| →
+|  |digit|_, { |digit|_ }
+|  ;
 
 .. |symbolic literal| replace:: *symbolic literal*
 .. _`symbolic literal`:
 
-|symbolic literal| →
- |numeric literal|_
- | |boolean literal|_
- | |nil literal|_
- | |character literal|_
- | |text literal|_
- | |quote literal|_
- ;
+| |symbolic literal| →
+|  |numeric literal|_
+|  | |boolean literal|_
+|  | |nil literal|_
+|  | |character literal|_
+|  | |text literal|_
+|  | |quote literal|_
+|  ;
 
 .. |numeric literal| replace:: *numeric literal*
 .. _`numeric literal`:
 
-|numeric literal| →
- |decimal literal|_
- | |hex literal|_
- ;
+| |numeric literal| →
+|  |decimal literal|_
+|  | |hex literal|_
+|  ;
 
 .. |exponent| replace:: *exponent*
 .. _`exponent`:
 
-|exponent| →
- (``E`` | ``e``), [ ``+`` | ``-``], |numeral|_
- ;
+| |exponent| →
+|  (``E`` | ``e``), [ ``+`` | ``-``], |numeral|_
+|  ;
 
 .. |decimal literal| replace:: *decimal literal*
 .. _`decimal literal`:
 
-|decimal literal| →
- |numeral|_, [ ``.``, |digit|_, { |digit|_ } ], [ |exponent|_ ]
- ;
+| |decimal literal| →
+|  |numeral|_, [ ``.``, |digit|_, { |digit|_ } ], [ |exponent|_ ]
+|  ;
 
 .. |hex literal| replace:: *hex literal*
 .. _`hex literal`:
 
-|hex literal| →
- (``0x`` | ``0X``), |hex digit|_, { |hex digit|_ }
- ;
+| |hex literal| →
+|  (``0x`` | ``0X``), |hex digit|_, { |hex digit|_ }
+|  ;
 
 .. |boolean literal| replace:: *boolean literal*
 .. _`boolean literal`:
 
-|boolean literal| →
- ``true`` | ``false``
- ;
+| |boolean literal| →
+|  ``true`` | ``false``
+|  ;
 
 .. |nil literal| replace:: *nil literal*
 .. _`nil literal`:
 
-|nil literal| →
- ``nil``
- ;
+| |nil literal| →
+|  ``nil``
+|  ;
 
 .. |character literal| replace:: *character literal*
 .. _`character literal`:
 
-|character literal| →
- ``'``, |character|_, ``'``
- | ``'``, |escape sequence|_, ``'``
- ;
+| |character literal| →
+|  ``'``, |character|_, ``'``
+|  | ``'``, |escape sequence|_, ``'``
+|  ;
 
 .. |escape sequence| replace:: *escape sequence*
 .. _`escape sequence`:
 
-|escape sequence| →
- ``\\`` | ``\r`` | ``\n`` | ``\t`` | ``\f`` | ``\e`` | ``\a``\ | ``\"``\ | ``\'`` | ``\x``, |hex digit|_, |hex digit|_
- | ``\u``, |hex digit|_, |hex digit|_, |hex digit|_, |hex digit|_
- | ``\c``, |ascii letter|_
- ;
+| |escape sequence| →
+|  ``\\`` | ``\r`` | ``\n`` | ``\t`` | ``\f`` | ``\e`` | ``\a``\ | ``\"``\ | ``\'`` | ``\x``, |hex digit|_, |hex digit|_
+|  | ``\u``, |hex digit|_, |hex digit|_, |hex digit|_, |hex digit|_
+|  | ``\c``, |ascii letter|_
+|  ;
 
 .. |text literal| replace:: *text literal*
 .. _`text literal`:
 
-|text literal| →
- ``"``, { |character|_ | |escape sequence|_ }, ``"``
- ;
+| |text literal| →
+|  ``"``, { |character|_ | |escape sequence|_ }, ``"``
+|  ;
 
 .. |quote literal| replace:: *quote literal*
 .. _`quote literal`:
 
-|quote literal| →
- ``<``, |identifier|_, ``>``
- ;
+| |quote literal| →
+|  ``<``, |identifier|_, ``>``
+|  ;
