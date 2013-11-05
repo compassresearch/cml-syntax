@@ -92,7 +92,7 @@ Declarations
 .. _`nameset definition`:
 
 | |nameset definition| →
-|  |identifier|_, ``=``, |nameset expression|
+|  |identifier|_, ``=``, |nameset expression|_
 |  ;
 
 .. |state declarations| replace:: *state declarations*
