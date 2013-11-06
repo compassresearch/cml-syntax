@@ -199,7 +199,7 @@ Configuration Blocks
 .. _`configuration block`:
 
 | |configuration block| →
-|  ``configuration``, |identifier|_ , [ ``extends``, |identifier|_ ], ``includes``, |identifier|_, { ``,``, |identifier|_ }, ``end``
+|  ``configuration``, |identifier|_, ``includes``, |identifier|_, { ``,``, |identifier|_ }, ``end``
 |  ;
 
 
