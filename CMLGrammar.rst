@@ -296,7 +296,7 @@ Processes
 |  | ``[[``, |renaming pair|_, ``|`` |bind list|_, [ ``@``, |expression|_ ], ``]]``
 |  ;
 
-Note that the M20 parser only supports a single expression after an identifier in a |renaming pair|_; this is the subject of issue #13.
+Note that the current parser only supports a single expression after an identifier in a |renaming pair|_; this will be corrected in a future release.
 
 .. |renaming pair| replace:: *renaming pair*
 .. _`renaming pair`:
