@@ -239,7 +239,6 @@ Processes
 |  | |process|_, ``|~|``, |process|_
 |  | |process|_, ``[|``, |chanset expression|_, ``|]``, |process|_
 |  | |process|_, ``[``, |chanset expression|_, ``||``, |chanset expression|_, ``]``, |process|_
-|  | |process|_, ``||``, |process|_
 |  | |process|_, ``|||``, |process|_
 |  | |process|_, ``/_\``, |process|_
 |  | |process|_, ``/_``, |expression|_, ``_\``, |process|_
@@ -269,10 +268,9 @@ Processes
 |  ``;``, |replication declarations|_, ``@``, |process|_
 |  | ``[]``, |replication declarations|_, ``@``, |process|_
 |  | ``|~|``, |replication declarations|_, ``@``, |process|_
+|  | ``|||``, |replication declarations|_, ``@``, |process|_
 |  | ``[|``, |chanset expression|_, ``|]``, |replication declarations|_, ``@``, |process|_
 |  | ``||``, |replication declarations|_, ``@``, ``[``, |chanset expression|_, ``]``, |process|_
-|  | ``||``, |replication declarations|_, ``@``, |process|_
-|  | ``|||``, |replication declarations|_, ``@``, |process|_
 |  ;
 
 .. |action paragraph| replace:: *action paragraph*
@@ -386,9 +384,7 @@ Actions
 .. _`parallel action`:
 
 | |parallel action| →
-|  |action|_, ``||`` |action|_,
-|  | |action|_, ``[|``, |nameset expression|_, ``|``, |nameset expression|_, ``|]``, |action|_
-|  | |action|_, ``|||``, |action|_
+|  |action|_, ``|||``, |action|_
 |  | |action|_, ``[||``, |chanset expression|_, ``|``, |chanset expression|_, ``||]``, |action|_
 |  | |action|_, ``[``, |chanset expression|_, ``||``, |chanset expression|_, ``]``, |action|_
 |  | |action|_, ``[``, |nameset expression|_, ``|``, |chanset expression|_, ``||``, |chanset expression|_, ``|``, |nameset expression|_, ``]``, |action|_
@@ -421,7 +417,6 @@ Actions
 |  | ``|||``, |replication declarations|_, ``@``, ``[``, |nameset expression|_, ``]``, |action|_
 |  | ``[|``, |chanset expression|_ ``|]``, |replication declarations|_, ``@``, ``[`` , |nameset expression|_, ``]``, |action|_
 |  | ``||``, |replication declarations|_, ``@``, ``[``, |nameset expression|_, ``|``, |chanset expression|_, ``]``, |action|_
-|  | ``||``, |replication declarations|_, ``@``, ``[``, |nameset expression|_, ``]``, |action|_
 |  ;
 
 
