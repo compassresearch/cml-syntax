@@ -385,7 +385,7 @@ Actions
 
 | |parallel action| →
 |  |action|_, ``|||``, |action|_
-|  | |action|_, ``[||``, |chanset expression|_, ``|``, |chanset expression|_, ``||]``, |action|_
+|  | |action|_, ``[||``, |nameset expression|_, ``|``, |nameset expression|_, ``||]``, |action|_
 |  | |action|_, ``[``, |chanset expression|_, ``||``, |chanset expression|_, ``]``, |action|_
 |  | |action|_, ``[``, |nameset expression|_, ``|``, |chanset expression|_, ``||``, |chanset expression|_, ``|``, |nameset expression|_, ``]``, |action|_
 |  | |action|_, ``[|``, |chanset expression|_, ``|]``, |action|_
