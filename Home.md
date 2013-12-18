@@ -9,6 +9,7 @@ The grammar itself is in the [[CMLGrammar]] page.
 
 Sections:
 * Toplevel bits: the top abstraction [[CML Model|CMLGrammar#top-level-model]] and contained [[Declarations|CMLGrammar#declarations]]
+* [[Configuration Blocks|CMLGrammar#configuration-blocks]]
 * [[Classes|CMLGrammar#classes]]
 * [[Processes|CMLGrammar#processes]]
 * [[Actions|CMLGrammar#actions]] and [[Statements|CMLGrammar#statements]]
