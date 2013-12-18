@@ -36,7 +36,7 @@ Declarations
 .. _`value declarations`:
 
 | |value declarations| →
-|  ``values``, [ ``(``, |identifier|_, ``)`` ], { |value definition|_ }
+|  ``values``, [ ``[``, |identifier|_, ``]`` ], { |value definition|_ }
 |  ;
 
 .. |value definition| replace:: *value definition*
@@ -57,7 +57,7 @@ Declarations
 .. _`channel declarations`:
 
 | |channel declarations| →
-|  ``channels``, [ ``(``, |identifier|_, ``)`` ], { |channel name declarations|_ }
+|  ``channels``, [ ``[``, |identifier|_, ``]`` ], { |channel name declarations|_ }
 |  ;
 
 .. |channel name declarations| replace:: *channel name declarations*
@@ -71,7 +71,7 @@ Declarations
 .. _`chanset declarations`:
 
 | |chanset declarations| →
-|  ``chansets``, [ ``(``, |identifier|_, ``)`` ], { |chanset definition|_ }
+|  ``chansets``, [ ``[``, |identifier|_, ``]`` ], { |chanset definition|_ }
 |  ;
 
 .. |chanset definition| replace:: *chanset definition*
@@ -532,7 +532,7 @@ Types
 .. _`type declarations`:
 
 | |type declarations| →
-|  ``types``, [ ``(``, |identifier|_, ``)`` ], [ |type definition|_, { ``;``, |type definition|_ } ]
+|  ``types``, [ ``[``, |identifier|_, ``]`` ], [ |type definition|_, { ``;``, |type definition|_ } ]
 |  ;
 
 .. |type definition| replace:: *type definition*
@@ -679,7 +679,7 @@ Functions
 .. _`function declarations`:
 
 | |function declarations| →
-|  ``functions``, [ ``(``, |identifier|_, ``)`` ], { |function definition|_ }
+|  ``functions``, [ ``[``, |identifier|_, ``]`` ], { |function definition|_ }
 |  ;
 
 .. |function definition| replace:: *function definition*
