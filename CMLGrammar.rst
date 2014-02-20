@@ -329,7 +329,7 @@ Actions
 |  ``Skip``
 |  | ``Stop``
 |  | ``Chaos``
-|  | ``Div``
+|  | ``Diverge``
 |  | ``Wait`` |expression|_
 |  | |communication|_, ``->``, |action|_
 |  | ``[``, |expression|_, ``]``, ``&``, |action|_
