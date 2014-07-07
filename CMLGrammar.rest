@@ -114,15 +114,7 @@ Declarations
 .. _`assignment definition`:
 
 | |assignment definition| →
-|  |identifier|_, ``:``, |type|_, [ |assignment definition value|_ ]
-|  ;
-
-.. |assignment definition value| replace:: *assignment definition value*
-.. _`assignment definition value`:
-
-| |assignment definition value| →
-|  ``:=``, |expression|_
-|  | ``in``, |expression|_
+|  |identifier|_, ``:``, |type|_, [ ``:=``, |expression|_ ]
 |  ;
 
 .. |invariant definition| replace:: *invariant definition*
