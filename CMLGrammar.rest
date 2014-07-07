@@ -136,7 +136,7 @@ Declarations
 .. _`process declaration`:
 
 | |process declaration| →
-|  ``process``, |identifier|_, ``=``, [ |parametrisation|_, ``@`` ], |process|_
+|  ``process``, |identifier|_, ``=``, [ |parametrisation|_, { ``,``, |parametrisation|_ }, ``@`` ], |process|_
 |  ;
 
 Note: the only parametrisation qualifier allowed in a process
@@ -168,7 +168,7 @@ to ``val``, and is permitted as well.)
 .. _`action definition`:
 
 | |action definition| →
-|  |identifier|_, ``=``, [ |parametrisation|_, ``@`` ], |action|_
+|  |identifier|_, ``=``, [ |parametrisation|_, { ``,``, |parametrisation|_ }, ``@`` ], |action|_
 |  ;
 
 .. |chanset expression| replace:: *chanset expression*
@@ -247,7 +247,7 @@ Processes
 |  | |process|_, ``\\``, |chanset expression|_
 |  | |process|_, ``startsby``, |expression|_
 |  | |process|_, ``endsby``, |expression|_
-|  | ``(``, |parametrisation|_, ``@``, |process|_, ``)``, ``(``, |expression|_, { ``,``, |expression|_ }, ``)``
+|  | ``(``, |parametrisation|_, { ``,``, |parametrisation|_ }, ``@``, |process|_, ``)``, ``(``, |expression|_, { ``,``, |expression|_ }, ``)``
 |  | |identifier|_, [ ``(``, [ |expression|_, { ``,``, |expression|_ } ], ``)`` ]
 |  | |process|_, |renaming expression|_
 |  | |replicated process|_
