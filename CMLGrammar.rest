@@ -326,6 +326,7 @@ Actions
 .. _`action`:
 
 | |action| →
+|  |identifier|_
 |  ``Skip``
 |  | ``Stop``
 |  | ``Chaos``
