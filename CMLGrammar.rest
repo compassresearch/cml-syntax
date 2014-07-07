@@ -329,7 +329,6 @@ Actions
 |  |identifier|_
 |  ``Skip``
 |  | ``Stop``
-|  | ``Chaos``
 |  | ``Diverge``
 |  | ``Wait`` |expression|_
 |  | |communication|_, ``->``, |action|_
