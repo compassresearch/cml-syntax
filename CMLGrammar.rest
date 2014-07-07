@@ -327,7 +327,7 @@ Actions
 
 | |action| →
 |  |identifier|_
-|  ``Skip``
+|  | ``Skip``
 |  | ``Stop``
 |  | ``Diverge``
 |  | ``Wait`` |expression|_
