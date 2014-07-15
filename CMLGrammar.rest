@@ -393,7 +393,6 @@ Actions
 |  ``;``, |replication declarations|_, ``@``, |action|_
 |  | ``[]``, |replication declarations|_, ``@``, |action|_
 |  | ``|~|``, |replication declarations|_, ``@``, |action|_
-|  | ``[||``, |nameset expression|_, ``||]``, |replication declarations|_, ``@``, |action|_
 |  | ``|||``, |replication declarations|_, ``@``, ``[``, |nameset expression|_, ``]``, |action|_
 |  | ``[|``, |chanset expression|_ ``|]``, |replication declarations|_, ``@``, ``[`` , |nameset expression|_, ``]``, |action|_
 |  | ``||``, |replication declarations|_, ``@``, ``[``, |nameset expression|_, ``|``, |chanset expression|_, ``]``, |action|_
