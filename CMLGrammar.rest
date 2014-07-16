@@ -250,7 +250,7 @@ Processes
 |  | ``|~|``, |replication declarations|_, ``@``, |process|_
 |  | ``|||``, |replication declarations|_, ``@``, |process|_
 |  | ``[|``, |chanset expression|_, ``|]``, |replication declarations|_, ``@``, |process|_
-|  | ``||``, |replication declarations|_, ``@``, ``[``, |chanset expression|_, ``]``, |process|_
+|  | ``||``, |replication declarations|_, ``@``, ``[``, [ |chanset expression|_ ], ``]``, |process|_
 |  ;
 
 .. |action paragraph| replace:: *action paragraph*
@@ -393,9 +393,9 @@ Actions
 |  ``;``, |replication declarations|_, ``@``, |action|_
 |  | ``[]``, |replication declarations|_, ``@``, |action|_
 |  | ``|~|``, |replication declarations|_, ``@``, |action|_
-|  | ``|||``, |replication declarations|_, ``@``, ``[``, |nameset expression|_, ``]``, |action|_
-|  | ``[|``, |chanset expression|_ ``|]``, |replication declarations|_, ``@``, ``[`` , |nameset expression|_, ``]``, |action|_
-|  | ``||``, |replication declarations|_, ``@``, ``[``, |nameset expression|_, ``|``, |chanset expression|_, ``]``, |action|_
+|  | ``|||``, |replication declarations|_, ``@``, ``[``, [ |nameset expression|_ ], ``]``, |action|_
+|  | ``[|``, |chanset expression|_ ``|]``, |replication declarations|_, ``@``, ``[`` , [ |nameset expression|_ ], ``]``, |action|_
+|  | ``||``, |replication declarations|_, ``@``, ``[``, [ |nameset expression|_ ], ``|``, [ |chanset expression|_ ], ``]``, |action|_
 |  ;
 
 
